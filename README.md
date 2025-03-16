@@ -16,10 +16,9 @@ O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- HTML (posteriormente migrado para REACT)
-- CSS  (posteriormente migrado para REACT)
-- Javascript
-- Express para administração de rotas, tratamento e modelagem de dados
+- EJS para estruturação e renderização (posteriormente migrado para REACT)
+- Tailwind CSS para estilização
+- Javascript e Express para administração de rotas, tratamento e modelagem de dados
 - MongoDB como banco de dados
 
 ## Contribuidores 
