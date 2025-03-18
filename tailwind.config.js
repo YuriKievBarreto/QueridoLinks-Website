@@ -17,7 +17,7 @@ module.exports = {
       },
 
       fontFamily: {
-        teste: ['Roboto', 'sans-serif'], // Define o Roboto como fonte principal
+        BebasNeue: ['BebasNeue-Regular', 'sans-serif'], // Define o Roboto como fonte principal
       }
     },
     plugins: [],

@@ -1,0 +1,15 @@
+.tipografia{
+    
+        font-family: 'BebasNeue-Regular';
+        
+    
+
+}
+
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
+    font-size: normal;
+    font-display: swap;
+ }
