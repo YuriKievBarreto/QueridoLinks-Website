@@ -14,7 +14,7 @@ O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
 ## Tecnologias Utilizadas
 
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+desenvolvido utilizando as seguintes tecnologias:
 
 - EJS para estruturação e renderização (posteriormente migrado para REACT)
 - Tailwind CSS para estilização

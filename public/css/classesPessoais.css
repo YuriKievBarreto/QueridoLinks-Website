@@ -1,0 +1,28 @@
+.item-oferta{
+    width: 280px;
+    height:270px;
+    /*border: 1px solid black;*/
+}
+
+.item-oferta>img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  min-width: 90%;
+  max-width: 100%;
+  min-height: 80%;
+  max-height: 90%;
+}
+
+.bebasNeue{
+    font-family: 'BebasNeue-Regular';
+}
+
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
+    font-size: normal;
+    font-display: swap;
+ }

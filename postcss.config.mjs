@@ -13,7 +13,7 @@ export default {
       },
 
       fontFamily: {
-        BebasNeue: ['BebasNeue-Regular', 'sans-serif'], // Define o Roboto como fonte principal
+        BebasNeue: ['BebasNeue-Regular', 'sans-serif'], //rincipal
       }
     },
 
