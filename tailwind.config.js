@@ -15,6 +15,10 @@ module.exports = {
           'violeta-vivo': '#8905ED',
         }
       },
+
+      fontFamily: {
+        teste: ['Roboto', 'sans-serif'], // Define o Roboto como fonte principal
+      }
     },
     plugins: [],
   }
