@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/classesPessoais.css">
 
 </head>
-<body class="bg-[rgba(0,0,0,0.2)] bebasNeue">
+<body class=" bg-[rgba(0,0,0,0.2)] bebasNeue ">
     <header class=" w-full h-20 p-2 bg-blue-500 flex items-center justify-around gap-12 px-7 fixed z-10 ">
 
         <div class="flex items-center gap-4 mr-4">
@@ -69,13 +69,18 @@
 
         </div>
         <!-- section de apresentação -->
-        <section class="w-77/100   mx-auto mt-3 grid grid-cols-3 gap-1">
-            <div class="col-span-2 row-span-2 bg-blue-300">
-                <img src="/assets/imgs/carrossel/1.png" class="w-full h-100/100 " alt="">
-                <div class="w-7/100 m-auto pt-2 flex justify-center gap-1">
-                    <input class="w-4 h-4" type="radio">
-                    <input class="w-4 h-4" type="radio" checked>
-                </div>
+        <section class="w-77/100  mx-auto mt-3 grid grid-cols-3 gap-1">
+            <div class="col-span-2 row-span-2 bg-blue-300 flex overflow-hidden">
+                <img  src="/assets/imgs/carrossel/1.png" class=" carrossel w-full h-100/100  " alt="">
+                <img src="/assets/imgs/carrossel/2.png" class="carrossel w-full h-100/100 " alt="">
+                <img src="/assets/imgs/carrossel/3.png" class="carrossel w-full h-100/100  " alt="">
+
+               <div class="navegacao">
+                <input type="radio" disabled name="" id="">
+                <input type="radio"  disabled name="" id="">
+                <input type="radio" disabled name="" id="">
+               </div>
+                
             </div>
             <div class="bg-amber-900">
                 <img src="/assets/imgs/siga-no-x.png" class="w-full h-full" alt="">
@@ -86,14 +91,19 @@
         </section>
 
         <!--DESTAQUES-->
-        <div  class="exposicao  w-95/100 min-h-70 mx-auto mb-10 mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
-            <h1 class="text-start text-3xl mb-1 font-bold  text-[#05ABED] ">PRODUTOS EM DESTAQUE</h1>
-            <h1 class="text-end text-lg mb-5 ">Ver todos -></h1>
-            <div class="flex justify-center items-center gap-5">
+        <div  class="exposicao  w-95/100  mx-auto mb-10 mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
+            <h1 class="text-start text-2xl mb-1 font-bold  text-[#05ABED] ">PRODUTOS EM DESTAQUE</h1>
+            <h1 class="text-end text-lg mb-2 ">Ver todos -></h1>
+            <div class="flex justify-center items-center  ">
                 <div class="item-oferta">
                     <img src="/assets/imgs/airfrie.png" class=""  alt="">
                     <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
                     
+                </div>
+
+                <div class="item-oferta ">
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
                 </div>
 
                 <div class="item-oferta ">
@@ -122,24 +132,34 @@
         </div>
 
 
-        <div  class="exposicao bg-white w-95/100 min-h-70 mx-auto  p-3 border-2">
-            <h1 class="text-start text-3xl mb-5 ">DESTAQUES</h1>
-            <h1 class="text-end text-lg mb-5 ">Ver todos -></h1>
-            <div class="flex justify-center items-center gap-5">
-                <div class="item-oferta w-70 h-60 ">
-
+        <div  class="exposicao  w-95/100  mx-auto mb-10 mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
+            <h1 class="text-start text-2xl mb-1 font-bold  text-[#05ABED] ">PRODUTOS EM DESTAQUE</h1>
+            <h1 class="text-end text-lg mb-2 ">Ver todos -></h1>
+            <div class="flex justify-center items-center  ">
+                <div class="item-oferta">
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
+                    
                 </div>
 
                 <div class="item-oferta ">
-
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
                 </div>
 
                 <div class="item-oferta ">
-
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
                 </div>
 
                 <div class="item-oferta ">
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
+                </div>
 
+                <div class="item-oferta ">
+                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
+                    <p class="text-center text-xl text-bold font-bold ">R$: 40,00</p>
                 </div>
             </div>
         </div>
@@ -149,5 +169,7 @@
     <footer class="w-full h-40 bg-[#2B7FFF] ">
 
     </footer>
+
+    <script src="/js/carrossel.js"></script>
 </body>
 </html>

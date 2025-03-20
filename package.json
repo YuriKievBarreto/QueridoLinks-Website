@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon server.js ",
     "build:css": "postcss ./public/css/style.css -o ./public/css/style.css",
     "watch:css": "postcss ./public/css/style.css -o ./public/css/output.css --watch"
   },

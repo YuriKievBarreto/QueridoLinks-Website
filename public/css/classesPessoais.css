@@ -1,7 +1,7 @@
 .item-oferta{
-    width: 280px;
-    height:270px;
-    /*border: 1px solid black;*/
+    width: 250px;
+    height:230px;
+    
 }
 
 .item-oferta>img{
@@ -9,10 +9,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
-  min-width: 90%;
-  max-width: 100%;
-  min-height: 80%;
-  max-height: 90%;
+  min-width: 85%;
+  max-width: 90%;
+  min-height: 75%;
+  max-height: 80%;
 }
 
 .bebasNeue{
@@ -26,3 +26,36 @@
     font-size: normal;
     font-display: swap;
  }
+
+
+ .carrossel{
+    transition: 2s;
+ }
+
+ .navegacao{
+    position: absolute;
+    display: flex;
+    gap: 28px;
+    top: 87%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+ }
+
+ .navegacao > *{
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: 2s;
+    background-color: #3b05ed00;
+    border: 2.5px solid #BEBA37;
+    appearance: none;
+    border-radius: 50%;
+ }
+
+ .navegacao > *:checked{
+    background-color: white;
+ }
+
+ 
