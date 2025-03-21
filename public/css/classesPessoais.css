@@ -58,4 +58,22 @@
     background-color: white;
  }
 
+
+ .item-categorias{
+   width: 120px;
+   height: 120px;
+   border: 1px solid black;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .item-categorias>img{
+   width: 50%;
+   height: 50%;
+   
+ }
  
