@@ -1,4 +1,4 @@
 // Controlador para a página principal
-exports.index = (req, res) => {
+export function index(req, res) {
     res.render('index')
-  };
+  }

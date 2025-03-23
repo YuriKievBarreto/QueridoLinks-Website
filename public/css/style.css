@@ -1,4 +1,6 @@
 /*! tailwindcss v4.0.14 | MIT License | https://tailwindcss.com */
 @import "tailwindcss";
 @import url('./tipografia.css');
+@import url('./classesPessoais.css');
+@import url('./formularioCadastro.css');
 
