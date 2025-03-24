@@ -144,4 +144,70 @@
  }
 
  }
+
+
+
+ @media (min-width: 1024px){
+   .item-oferta{
+      width: 150px;
+      height:150px;
+  }
+
+  .item-oferta>img{
+   min-width: 70%;
+   max-width: 85%;
+   min-height: 55%;
+   max-height: 80%;
+   margin-top: 4px;
+  }
+
+  .item-oferta>p{
+   font-size: 20px;
+  }
+
+  .item-oferta>img{
+   min-width: 70%;
+   max-width: 85%;
+   min-height: 55%;
+   max-height: 80%;
+   margin-top: 4px;
+  }
+
+  .item-destaque{
+   width: 12%;
+ }
+ 
+
+  
+  .item-destaque>img{
+   max-width: 95%;
+   min-width: 90%;
+  }
+
+  .item-destaque>p{
+   font-size: large;
+   margin-top: 3px;
+}
+
+.item-categorias{
+   width: 100px;
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   
+ }
+
+ .item-categorias>img{
+   width: 65%;
+   height: 75%;
+   
+ }
+
+}
+
+
+
+ 
  
