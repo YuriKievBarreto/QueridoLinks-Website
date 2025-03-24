@@ -3,7 +3,6 @@
 .item-oferta{
     width: 120px;
     height:120px;
-    
 }
 
 .item-oferta>img{
@@ -97,5 +96,52 @@
    width: 55%;
    height: 55%;
    
+ }
+
+
+ @media (min-width: 768px){
+
+   
+
+   .item-oferta{
+      width: 160px;
+      height:160px;
+  }
+
+  .item-oferta>img{
+   min-width: 70%;
+   max-width: 85%;
+   min-height: 55%;
+   max-height: 80%;
+   margin-top: 4px;
+  }
+
+  
+  .item-destaque>img{
+   max-width: 85%;
+   min-width: 80%;
+  }
+
+  .item-destaque>p{
+   font-size: larger;
+   margin-top: 3px;
+}
+
+  .item-categorias{
+   width: 110px;
+   height: 110px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 4px;
+ }
+
+ .item-categorias>img{
+   width: 55%;
+   height: 55%;
+   
+ }
+
  }
  
