@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/formularioCadastro.css">
+   
+   
+</head>
+<body class=" bg-[rgba(0,0,0,0.2)] bebasNeue ">
+    <header class=" w-full h-20 p-2 bg-blue-500 flex items-center justify-around gap-12 px-7  z-10 ">
+
+        <div class="flex items-center gap-4 mr-4">
+            <img src="/assets/imgs/logo.png" class="w-15 h-15 inline-block">
+            <h1 class="text-4xl inline-block text-white font-bold">QueridoLinks</h1>
+        </div>
+    
+        <form class="flex items-center gap-1  p-1 rounded-sm" >
+            <input type="text" name="" id="" placeholder="Buscar em Querido Links" class="w-180 h-11 p-2 bg-white rounded-sm">
+            <button class=" w-11 h-11 bg-white bg-[url(/assets/imgs/procurar.png)] bg-cover rounded-sm"  ></button>
+        </form>
+    
+       
+        <a href="" class="hover:cursor-pointer"><img src="/assets/imgs/whatsapp.png" class="w-10 h-9"  alt=""></a>
+        
+    </header>
+
+   <main class="mt-4 flex justify-around">
+    <div class="w-3/7 bg-amber-600 mx-auto rounded-xl p-4">
+        <h1 class="text-center text-3xl mb-2">Cadastro produto</h1>
+        <form action="/cadastro" method="post" class="formulario-cadastro" >
+            <div>
+                <label  for="nome">Nome do produto</label>
+                <input  type="text" name="nome" id="">
+            </div>
+            <div>
+                
+                <label  for="nome">Valor do produto</label>
+                <input  type="text" name="valor" id="">
+            </div>
+
+            <div>
+                <label  for="link">Link de afiliado do produto</label>
+                <input  type="text" name="link" id="">
+            </div>
+
+            <div>
+                <label  for="imagem">Link da imagem do produto</label>
+                <input  type="text" name="imagem" id="">
+            </div>
+
+            <fieldset class="">
+            <legend>Categorias</legend>
+            <label for="eletronico">eletronico</label>
+            <input type="checkbox" name="eletronico" id="">
+            
+            <label for="moda">Moda</label>
+            <input type="checkbox" name="moda" id="">
+
+            <label for="cozinha">Cozinha</label>
+            <input type="checkbox" name="cozinha" id="">
+
+            <label for="acessorios">Acessorios</label>
+            <input type="checkbox" name="acessorios" id="">
+            
+            <label for="decoracao">Decoração</label>
+            <input type="checkbox" name="decoracao" id="">
+
+            <label for="decoracao">Decoração</label>
+            <input type="checkbox" name="decoracao" id="">
+
+            <label for="decoracao">Decoração</label>
+            <input type="checkbox" name="decoracao" id="">
+
+            <label for="decoracao">Decoração</label>
+            <input type="checkbox" name="decoracao" id="">
+
+            <label for="decoracao">Decoração</label>
+            <input type="checkbox" name="decoracao" id="">
+
+            
+            </fieldset>
+
+            <button type="submit">enviar</button>
+        </form>
+    </div>
+
+    <div class="w-3/7 bg-blue-700 mx-auto rounded-xl p-4">
+        <h1 class="text-3xl text-center">previa</h1>
+        <div class="item-previa m-auto">
+            <img src="https://pbs.twimg.com/media/GfHiBmSXgAArPfW?format=jpg&name=900x900" alt="">
+            <p class="text-center">valor</p>
+        </div>
+
+        <button class="text-xl border-2 rounded-lg p-1 mx-auto mt-3 bg-white block">Exibir previa</button>
+    </div>
+   </main>
+    
+   <script src="/js/previaCadastro.js"></script>
+</body>
+</html>
