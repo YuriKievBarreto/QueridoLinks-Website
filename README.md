@@ -12,13 +12,12 @@ O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
 - **Pesquisa de itens**: Realiza uma busca combase no que o usuário digitou na área de pesquisa.
 
-- **Exposição dinamica de Itens**: Cada vez que a página é carregada há uma     exibição diferente
-
-    *Exposição dinamica de :*
-       - **categorias no topo da pagina inicial**
-       - *produtos nas seções de **destaques, ofertas e categorias***
-       - *produtos na **pagina de categorias***
-       - *produtos nos **resultados para busca por palavras-chave***
+- **Exposição dinamica de Itens**: Cada vez que a página é carregada há uma exibição diferente
+    - **Categorias no topo da página inicial**
+    - **Produtos nas seções de destaque, ofertas e categorias**
+    - **Produtos na página de categorias**
+    - **Produtos nos resultados para busca por palavras-chave**<br><br>
+          
 
    
     
