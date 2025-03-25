@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon server.js ",
     "build:css": "postcss ./public/css/style.css -o ./public/css/style.css",

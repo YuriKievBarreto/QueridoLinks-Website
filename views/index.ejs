@@ -21,19 +21,14 @@
         <form class="flex items-center gap-1  p-1 rounded-sm" >
             <input type="text" name="" id="" placeholder="Buscar em Querido Links" class=" w-70 h-10 p-2 rounded-sm bg-white md:w-90 md:h-12 lg:w-180 lg:h-11">
             <button class=" w-10 h-10 bg-white bg-[url(/assets/imgs/procurar.png)] bg-cover rounded-sm md:w-12 md:h-12 lg:w-11 lg:h-11"  ></button>
-        </form>
-
-       
-        <!--<a href="" class="hover:cursor-pointer"><img src="/assets/imgs/whatsapp.png" class="w-10 h-9"  alt=""></a>-->
-        
-       
+        </form>        
     </header>
 
 
     <main class="w-screen m-auto bg-[rgba(255,255,255,0.77)] min-h-80 pt-6 font-teste lg:pt-26" >
         <div class="flex justify-center items-center gap-10 w-95/100 bg-white shadow-xl m-auto p-3 lg:w-83/100">
 
-            <div class="flex flex-col justify-center items-center  pr-6 sm:hidden md:hidden" > 
+            <div class="lg:flex flex-col justify-center items-center  pr-6 hidden sm:hidden md:hidden" > 
                 <a href=""> <img src="/assets/imgs/lojas/mercado-livre.png" class="w-10 h-10 p-1 rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
                 <p>Mercado livre</p>
             </div>
@@ -49,18 +44,18 @@
             </div>
 
             <div class="flex flex-col justify-center items-center"> 
-                <a href=""> <img src="/assets/imgs/celular.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
-                <p>Eletronicos</p>
+                <a href=""> <img src="/assets/imgs/categorias/<%=categorias[0][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
+                <p><%=categorias[0][1]%></p>
             </div>
 
             <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href=""> <img src="/assets/imgs/camiseta.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
-                <p>Roupas e acessórios</p>
+                <a href=""> <img src="/assets/imgs/categorias/<%=categorias[1][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                <p><%=categorias[1][1]%></p>
             </div>
 
             <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href=""> <img src="/assets/imgs/brinquedo-pet.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
-                <p>Para pets</p>
+                <a href=""> <img src="/assets/imgs/categorias/<%=categorias[2][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                <p><%=categorias[2][1]%></p>
             </div>
 
             
@@ -71,13 +66,13 @@
             
         </div>
         <!-- section de apresentação -->
-        <section class="w-77/100 mx-auto mt-3 sm:grid grid-cols-3 gap-1 hidden md:w-90/100 lg:w-77/100">
+        <section class="w-77/100 mx-auto mt-3 sm:grid grid-cols-3 gap-1  md:w-90/100 lg:w-77/100 hidden">
             <div class="col-span-2 row-span-2 bg-blue-300 flex overflow-hidden">
                 <img  src="/assets/imgs/carrossel/1.png" class=" carrossel w-full h-100/100  " alt="">
-                <img src="/assets/imgs/carrossel/2.png" class="carrossel w-full h-100/100 " alt="">
-                <img src="/assets/imgs/carrossel/3.png" class="carrossel w-full h-100/100  " alt="">
+                <img 0src="/assets/imgs/carrossel/2.png" class="carrossel  w-full h-100/100 " alt="">
+                <img src="/assets/imgs/carrossel/3.png" class="carrossel  w-full h-100/100  " alt="">
 
-               <div class="navegacao">
+               <div class="navegacao hidden sm:hidden md:hidden">
                 <input type="radio" disabled name="" id="">
                 <input type="radio"  disabled name="" id="">
                 <input type="radio" disabled name="" id="">
@@ -93,51 +88,38 @@
         </section>
 
         <!--OFERTAS-->
-        <div  class="   w-95/100  mx-auto mb-10 mt-10 p-3 shadow-2xl border-t-2 border-[#05ABED] lg:px-3">
+        <div  class=" w-95/100  mx-auto mb-10 mt-10 p-3 shadow-2xl border-t-2 border-[#05ABED] lg:px-3">
             <h1 class="text-start text-2xl mb-1 font-bold  text-[#05ABED] md:text-4xl lg:text-2xl">OFERTAS</h1>
             <h1 class="text-end text-lg mb-2 md:text-lg">Ver todos -></h1>
             <div class="flex justify-start items-center  ">
-                <div class="item-oferta">
-                    <img src="https://pbs.twimg.com/media/GfHiBmSXgAArPfW?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center  text-bold font-bold ">R$: 40,00</p>
+                <% let qtd = 0; %>
+                <% produtos.forEach(produto => {%>
                     
-                </div>
+                    <% if(qtd < 8) { %> 
+                        
+                        <% if (qtd > 3) { %>
+                            
+                            <div class="item-oferta hidden  md:hidden lg:block">
+                                <img src="<%= produto.imagem %>" class="" alt="">
+                                <p class="text-center text-bold font-bold">R$:<%= produto.valor %></p>
+                            </div>
+                        <% } else { %>
+                            
+                            <div class="item-oferta">
+                                <img src="<%= produto.imagem %>" class="" alt="">
+                                <p class="text-center text-bold font-bold">R$:<%= produto.valor %></p>
+                            </div>
+                        <% } %>
+                        <% qtd++; 
+                            console.log(qtd)
+                        %> 
 
-                <div class="item-oferta ">
-                    <img src="https://pbs.twimg.com/media/GfHhWOEX0AAuxkk?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center text-bold font-bold ">R$: 40,00</p>
-                </div>
-
-                <div class="item-oferta ">
-                    <img src="https://pbs.twimg.com/media/GfHgn1vWwAAejZ7?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center text-bold font-bold ">R$: 40,00</p>
-                </div>
-
-                <div class="item-oferta ">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center = text-bold font-bold ">R$: 40,00</p>
-                </div>
-
-                <div class="item-oferta hidden md:hidden lg:block">
-                    <img src="https://pbs.twimg.com/media/GeiD2U-WMAA29F1?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center = text-bold font-bold ">R$: 40,00</p>
-                </div>
-
-                <div class="item-oferta hidden md:hidden lg:block">
-                    <img src="https://pbs.twimg.com/media/GfHfrW2XQAA1xAW?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center = text-bold font-bold ">R$: 40,00</p>
-                </div>
-                <div class="item-oferta hidden md:hidden lg:block">
-                    <img src="https://pbs.twimg.com/media/GfHfrW2XQAA1xAW?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center = text-bold font-bold ">R$: 40,00</p>
-                </div>
-                <div class="item-oferta hidden md:hidden lg:block">
-                    <img src="https://pbs.twimg.com/media/GfHfrW2XQAA1xAW?format=jpg&name=small" class=""  alt="">
-                    <p class="text-center = text-bold font-bold ">R$: 40,00</p>
-                </div>
-
-
-                
+                        
+                        
+                        
+                    <% } %>
+                        
+                <%}); %>
             </div>
         </div>
 
@@ -148,110 +130,95 @@
             <h1 class="text-start text-2xl mb-1 font-bold  text-[#05ABED] md:text-4xl lg:text-2xl">PRODUTOS EM DESTAQUE</h1>
             <h1 class="text-end text-lg mb-2 md:text-2xl">Ver todos -></h1>
             <div class="flex justify-around items-center flex-wrap gap-5 md:gap-7 md:mt-5 lg:gap-10 lg:justify-center  ">
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+                <% qtd = 0; %>
+                <% produtos.forEach(produto => {%>
                     
-                </div>
+                    <% if(qtd < 6) { %> 
+                        
+                        <% if(qtd > 3) { %>
+                            
+                            <div class="item-destaque hidden sm:hidden md:hidden lg:block">
+                                <img src="<%= produto.imagem %>" class=""  alt="">
+                                <p class="text-center text-bold text-md font-bold "><%= produto.nome %></p>
+                                <% console.log('rodando') %>
+                            </div>  
+                        <% } else { %>
 
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    
-                </div>
+                            <div class="item-destaque">
+                                <img src="<%= produto.imagem %>" class=""  alt="">
+                                <p class="text-center text-bold text-md font-bold "><%= produto.nome %></p>
+                                
+                            </div>
+                            
+                            
+                        <% } %>
+                        <% qtd++; 
+                            
+                        %> 
+                        
+                    <% } %>
+                        
 
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    
-                </div>
-
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>
-
-                <div class="item-destaque hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>
-
-                <div class="item-destaque hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>
-
-             
-
-
-            
-
-
-                
-
-                
+                <%}); %>
                 
             </div>
         </div>
 
 
-        <div  class="exposicao  w-95/100  mx-auto  mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
+        <div  class="  w-95/100  mx-auto  mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
             <h1 class="text-start text-2xl  font-bold  text-[#05ABED] md:text-4xl lg:text-2xl lg:mb-4">Categorias</h1>
-            <div class="flex justify-around items-center gap-4  flex-wrap lg:gap-0 lg:justify-start ">
+            <div class=" exposicao flex justify-around items-center gap-4  flex-wrap lg:gap-0 lg:justify-start ">
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                    <img src="/assets/imgs/categorias/<%=categorias[3][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[3][1]%></p>
                 </div>
-
-                <div class="item-categorias ">
-                    <img src="/assets/imgs/celular.png" class=""  alt="">
-                    <p class="text-center  text-bold  text-sm font-bold ">Lorem, ipsum.</p>
-                </div>
-
+                
                 <div class="item-categorias">
-                    <img src="/assets/imgs/brinquedo-pet.png" class=""  alt="">
-                    <p class="text-center  text-bold text-sm  "> Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/<%=categorias[4][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[4][1]%></p>
                 </div>
-
+                
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                    <img src="/assets/imgs/categorias/<%=categorias[5][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[5][1]%></p>
                 </div>
+                
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                    <img src="/assets/imgs/categorias/<%=categorias[0][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[0][1]%></p>
                 </div>
+                
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                    <img src="/assets/imgs/categorias/<%=categorias[1][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[1][1]%></p>
                 </div>
-                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                
+                <div class="item-categorias">
+                    <img src="/assets/imgs/categorias/<%=categorias[2][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[2][1]%></p>
                 </div>
-
-                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                
+                <div class="item-categorias">
+                    <img src="/assets/imgs/categorias/<%=categorias[6][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[6][1]%></p>
                 </div>
-
-                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
+                
+                <div class="item-categorias">
+                    <img src="/assets/imgs/categorias/<%=categorias[7][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[7][1]%></p>
                 </div>
+                
+                <div class="item-categorias">
+                    <img src="/assets/imgs/categorias/<%=categorias[8][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[8][1]%></p>
+                </div>
+                
+                <div class="item-categorias">
+                    <img src="/assets/imgs/categorias/<%=categorias[9][0]%>.png" class="" alt="">
+                    <p class="text-center text-sm font-bold"><%=categorias[9][1]%></p>
+                </div>
+                
                 
             </div>
         </div>
