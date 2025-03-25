@@ -17,11 +17,14 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Servir arquivos estáticos (CSS, JS) da pasta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true })); // Para dados de formulário
+app.use(express.json()); // Para dados em JSON
+
 
 //usando arquivo de rotas
 app.use(routes)
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(`Server http://localhost:${port}`);

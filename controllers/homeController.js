@@ -1,4 +1,6 @@
 // Controlador para a página principal
-export function index(req, res) {
+ function indexHome(req, res) {
     res.render('index')
   }
+
+module.exports = {indexHome}

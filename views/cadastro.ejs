@@ -30,7 +30,7 @@
    <main class="mt-4 flex justify-around">
     <div class="w-3/7 bg-amber-600 mx-auto rounded-xl p-4">
         <h1 class="text-center text-3xl mb-2">Cadastro produto</h1>
-        <form action="/cadastro" method="post" class="formulario-cadastro" >
+        <form action="/cadastro" method="POST" class="formulario-cadastro" >
             <div>
                 <label  for="nome">Nome do produto</label>
                 <input  type="text" name="nome" id="inpNome">
@@ -43,7 +43,7 @@
 
             <div>
                 <label  for="link">Link de afiliado do produto</label>
-                <input  type="text" name="link" id="">
+                <input  type="text" name="linkAfid" id="">
             </div>
 
             <div>
@@ -53,32 +53,32 @@
 
             <fieldset class="">
             <legend>Categorias</legend>
-            <label for="eletronico">eletronico</label>
-            <input type="checkbox" name="eletronico" id="">
+            <label for="eletronico" >eletronico</label>
+            <input type="checkbox" name="categorias"   value="eletronico" id="">
             
-            <label for="moda">Moda</label>
-            <input type="checkbox" name="moda" id="">
+            <label for="moda" >Moda</ldabel>
+            <input type="checkbox"  name="categorias"   value="moda" id="">
 
-            <label for="cozinha">Cozinha</label>
-            <input type="checkbox" name="cozinha" id="">
+            <label for="cozinha" >Cozinha</label>
+            <input type="checkbox"  name="categorias" value="cozinha" id="">
 
-            <label for="acessorios">Acessorios</label>
-            <input type="checkbox" name="acessorios" id="">
+            <label for="acessorios" >Acessorios</label>
+            <input type="checkbox" name="categorias" value="acessorios" id="">
             
-            <label for="decoracao">Decoração</label>
-            <input type="checkbox" name="decoracao" id="">
+            <label for="decoracao" >Decoração</label>
+            <input type="checkbox" name="categorias" value="decoracao" id="">
 
-            <label for="decoracao">Decoração</label>
-            <input type="checkbox" name="decoracao" id="">
+            <label for="decoracao" >Decoração</label>
+            <input type="checkbox" name="categorias" value="decoracao" id="">
 
-            <label for="decoracao">Decoração</label>
-            <input type="checkbox" name="decoracao" id="">
+            <label for="decoracao" >Decoração</label>
+            <input type="checkbox" name="categorias" value="decoracao" id="">
 
-            <label for="decoracao">Decoração</label>
-            <input type="checkbox" name="decoracao" id="">
+            <label for="decoracao" >Decoração</label>
+            <input type="checkbox" name="categorias" value="decoracao" id="">
 
-            <label for="decoracao">Decoração</label>
-            <input type="checkbox" name="decoracao" id="">
+            <label for="decoracao" >Decoração</label>
+            <input type="checkbox" name="categorias" value="decoracao" id="">
 
             
             </fieldset>
@@ -86,10 +86,10 @@
             <fieldset>
                 <legend>Lojas</legend>
                 <label for="shopee">shopee</label>
-                <input type="checkbox" name="shopee" id="">
+                <input type="radio" name="loja" value="mercadoLivre">
 
                 <label for="mercadoLivre">mercado Livre</label>
-                <input type="checkbox" name="mercadoLivre" id="">
+                <input type="radio" name="loja" value="mercadoLivre">
 
             </fieldset>
 

@@ -14,7 +14,6 @@
     --color-green-400: oklch(0.792 0.209 151.711);
     --color-blue-300: oklch(0.809 0.105 251.813);
     --color-blue-500: oklch(0.623 0.214 259.815);
-    --color-blue-700: oklch(0.488 0.243 264.376);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -444,9 +443,6 @@
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
-  }
-  .bg-blue-700 {
-    background-color: var(--color-blue-700);
   }
   .bg-white {
     background-color: var(--color-white);
