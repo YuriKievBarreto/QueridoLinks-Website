@@ -31,7 +31,7 @@ async function salvarProduto(req, res) {
     });
 
     console.log('Produto salvo com sucesso:', produtoSalvo);
-    res.status(201).json(produtoSalvo);  // Respondendo com o produto salvo
+    res.redirect('/cadastro')
   } catch (e) {
     console.log(e);
     res.status(500).json({ message: 'Erro ao salvar produto', error: e });
