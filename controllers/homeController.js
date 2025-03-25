@@ -21,10 +21,11 @@
         ["utilidades", "Utilidades"]
     ];
     
-    const categoriasDaVez = [];
-    const indicesUsados = new Set(); 
-    
-    while (categoriasDaVez.length < 3) {
+    const categoriasDaVez = []; 
+    const indicesUsados = new Set();
+
+    //sorteio para o inicio da pagina inicial
+    while (categoriasDaVez.length < 10) {
         let indice = Math.floor(Math.random() * 10);
         
         
@@ -33,6 +34,8 @@
             indicesUsados.add(indice); 
         }
     }
+
+    
 
     res.locals.categorias = categoriasDaVez;
     console.log(categoriasDaVez)
