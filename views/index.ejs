@@ -21,12 +21,7 @@
         <form class="flex items-center gap-1  p-1 rounded-sm" >
             <input type="text" name="" id="" placeholder="Buscar em Querido Links" class=" w-70 h-10 p-2 rounded-sm bg-white md:w-90 md:h-12 lg:w-180 lg:h-11">
             <button class=" w-10 h-10 bg-white bg-[url(/assets/imgs/procurar.png)] bg-cover rounded-sm md:w-12 md:h-12 lg:w-11 lg:h-11"  ></button>
-        </form>
-
-       
-        <!--<a href="" class="hover:cursor-pointer"><img src="/assets/imgs/whatsapp.png" class="w-10 h-9"  alt=""></a>-->
-        
-       
+        </form>        
     </header>
 
 
@@ -49,17 +44,17 @@
             </div>
 
             <div class="flex flex-col justify-center items-center"> 
-                <a href=""> <img src="/assets/imgs/celular.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
+                <a href=""> <img src="/assets/imgs/categorias/celular.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
                 <p>Eletronicos</p>
             </div>
 
             <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href=""> <img src="/assets/imgs/camiseta.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                <a href=""> <img src="/assets/imgs/categorias/camiseta.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
                 <p>Roupas e acessórios</p>
             </div>
 
             <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href=""> <img src="/assets/imgs/brinquedo-pet.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                <a href=""> <img src="/assets/imgs/categorias/brinquedo-pet.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
                 <p>Para pets</p>
             </div>
 
@@ -71,13 +66,13 @@
             
         </div>
         <!-- section de apresentação -->
-        <section class="w-77/100 mx-auto mt-3 sm:grid grid-cols-3 gap-1 hidden md:w-90/100 lg:w-77/100">
+        <section class="w-77/100 mx-auto mt-3 sm:grid grid-cols-3 gap-1  md:w-90/100 lg:w-77/100 hidden">
             <div class="col-span-2 row-span-2 bg-blue-300 flex overflow-hidden">
                 <img  src="/assets/imgs/carrossel/1.png" class=" carrossel w-full h-100/100  " alt="">
-                <img src="/assets/imgs/carrossel/2.png" class="carrossel w-full h-100/100 " alt="">
-                <img src="/assets/imgs/carrossel/3.png" class="carrossel w-full h-100/100  " alt="">
+                <img 0src="/assets/imgs/carrossel/2.png" class="carrossel  w-full h-100/100 " alt="">
+                <img src="/assets/imgs/carrossel/3.png" class="carrossel  w-full h-100/100  " alt="">
 
-               <div class="navegacao">
+               <div class="navegacao hidden sm:hidden md:hidden">
                 <input type="radio" disabled name="" id="">
                 <input type="radio"  disabled name="" id="">
                 <input type="radio" disabled name="" id="">
@@ -102,7 +97,7 @@
                     
                     <% if(qtd < 8) { %> 
                         
-                        <% if (qtd > 4) { %>
+                        <% if (qtd > 3) { %>
                             
                             <div class="item-oferta hidden  md:hidden lg:block">
                                 <img src="<%= produto.imagem %>" class="" alt="">
@@ -166,134 +161,66 @@
                         
 
                 <%}); %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!--
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    
-                </div>
-
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    
-                </div>
-
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    
-                </div>
-
-                <div class="item-destaque">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>
-
-                <div class="item-destaque hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>
-
-                <div class="item-destaque hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/airfrie.png" class=""  alt="">
-                    <p class="text-center text-bold text-md font-bold ">kit panela Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                    
-                </div>-->
-
-             
-
-
-            
-
-
-                
-
-                
                 
             </div>
         </div>
 
 
-        <div  class="exposicao  w-95/100  mx-auto  mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
+        <div  class="  w-95/100  mx-auto  mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
             <h1 class="text-start text-2xl  font-bold  text-[#05ABED] md:text-4xl lg:text-2xl lg:mb-4">Categorias</h1>
-            <div class="flex justify-around items-center gap-4  flex-wrap lg:gap-0 lg:justify-start ">
+            <div class=" exposicao flex justify-around items-center gap-4  flex-wrap lg:gap-0 lg:justify-start ">
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/camiseta.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Moda</p>
                     
                 </div>
 
                 <div class="item-categorias ">
-                    <img src="/assets/imgs/celular.png" class=""  alt="">
-                    <p class="text-center  text-bold  text-sm font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/celular.png" class=""  alt="">
+                    <p class="text-center  text-bold  text-sm font-bold ">Eletronicos</p>
                 </div>
 
                 <div class="item-categorias">
-                    <img src="/assets/imgs/brinquedo-pet.png" class=""  alt="">
-                    <p class="text-center  text-bold text-sm  "> Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/brinquedo-pet.png" class=""  alt="">
+                    <p class="text-center  text-bold text-sm  "> Para pets</p>
                 </div>
 
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/acessorio.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Acessórios</p>
                     
                 </div>
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/fones-de-ouvido.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Áudio</p>
                     
                 </div>
                 <div class="item-categorias">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/corrida.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Fitness</p>
                     
                 </div>
                 <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
-                    
-                </div>
-
-                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/banho.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Banho</p>
                     
                 </div>
 
                 <div class="item-categorias hidden sm:hidden md:hidden lg:block">
-                    <img src="/assets/imgs/camiseta.png" class=""  alt="">
-                    <p class="text-center text-sm  font-bold ">Lorem, ipsum.</p>
+                    <img src="/assets/imgs/categorias/tenis-de-corrida.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Calcados</p>
+                    
+                </div>
+
+                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
+                    <img src="/assets/imgs/categorias/engrenagem.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Ferramentas</p>
+                    
+                </div>
+
+                <div class="item-categorias hidden sm:hidden md:hidden lg:block">
+                    <img src="/assets/imgs/categorias/utilidades.png" class=""  alt="">
+                    <p class="text-center text-sm  font-bold ">Utilidades</p>
                     
                 </div>
                 

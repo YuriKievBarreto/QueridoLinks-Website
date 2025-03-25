@@ -81,6 +81,9 @@
     background-color: white;
  }
 
+ .item-categorias:last-of-type{
+  display: none;
+ }
 
  .item-categorias{
    width: 90px;
@@ -99,9 +102,11 @@
  }
 
 
- @media (min-width: 768px){
+ @media (min-width: 768px ) and (max-width: 1024px){
 
-   
+  .navegacao{
+    display: none;
+  }
 
    .item-oferta{
       width: 160px;
@@ -127,6 +132,11 @@
    margin-top: 3px;
 }
 
+.item-categorias:last-of-type{
+  display: flex;
+ }
+
+
   .item-categorias{
    width: 110px;
    height: 110px;
@@ -136,6 +146,8 @@
    flex-direction: column;
    gap: 4px;
  }
+
+ 
 
  .item-categorias>img{
    width: 55%;
@@ -176,6 +188,8 @@
   .item-destaque{
    width: 12%;
  }
+
+ 
  
 
   
@@ -189,6 +203,9 @@
    margin-top: 3px;
 }
 
+.item-categorias:last-of-type{
+  display: flex;
+ }
 .item-categorias{
    width: 100px;
    height: 80px;
