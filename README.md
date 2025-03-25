@@ -6,15 +6,19 @@ Web Site dedicado a expor produtos(oriundos de outros marketplaces) das mais var
 
 O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
-- **Página Inicial**: exposição de produtos em alta, combase em sua categoria
+- **Página Inicial**: Exposição de produtos em alta, combase em sua categoria
 
-- **Página de promoções**: produtos com promoções organizados por categoria
+- **Página de produtos separados por categorias**: Uma página dedicada a exposição de produtos combase nas suas categorias.
 
-- **link para grupo de WhatsApp**: um link para grupo do whatsapp que expõe as ultimas promoções encontradas 
+- **Pesquisa de itens**: Realiza uma busca combase no que o usuário digitou na área de pesquisa.
+
+- **Exposição dinamica de produtos**: Cada vez que a página é carregada há uma exibição diferente de produtos.
+
+- **link para grupo de WhatsApp**: um link para grupo do whatsapp que expõe as ultimas promoções encontradas. 
 
 ## Tecnologias Utilizadas
 
-desenvolvido utilizando as seguintes tecnologias:
+Desenvolvido utilizando as seguintes tecnologias:
 
 - EJS para estruturação e renderização (posteriormente migrado para REACT)
 - Tailwind CSS para estilização
