@@ -12,7 +12,17 @@ O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
 - **Pesquisa de itens**: Realiza uma busca combase no que o usuário digitou na área de pesquisa.
 
-- **Exposição dinamica de produtos**: Cada vez que a página é carregada há uma exibição diferente de produtos.
+- **Exposição dinamica de Itens**: Cada vez que a página é carregada há uma     exibição diferente
+
+    *Exposição dinamica de :*
+       - **categorias no topo da pagina inicial**
+       - *produtos nas seções de **destaques, ofertas e categorias***
+       - *produtos na **pagina de categorias***
+       - *produtos nos **resultados para busca por palavras-chave***
+
+   
+    
+
 
 - **link para grupo de WhatsApp**: um link para grupo do whatsapp que expõe as ultimas promoções encontradas. 
 

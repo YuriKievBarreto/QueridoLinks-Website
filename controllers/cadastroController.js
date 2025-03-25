@@ -6,6 +6,7 @@ const Produto = require('../models/cadastroModel')
 // Controlador para a página principal
  function indexCadastro(req, res, next) {
     res.render('cadastro')
+    next()
     
 }
 
@@ -38,6 +39,8 @@ async function salvarProduto(req, res) {
   }
 }
 
+
+
 class ProdutoLocal{
   constructor(nome, valor, linkAfid, imagem, loja, categorias){
     this.nome = nome
@@ -49,7 +52,9 @@ class ProdutoLocal{
   }
 }
 
+
+
 module.exports = {
   indexCadastro,
-  post
+  post,
 }
