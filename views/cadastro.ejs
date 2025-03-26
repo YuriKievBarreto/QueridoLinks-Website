@@ -32,8 +32,8 @@
         <h1 class="text-center text-3xl mb-2">Cadastro produto</h1>
         <form action="/cadastro" method="POST" class="formulario-cadastro" >
             <div>
-                <label  for="nome">Nome do produto</label>
-                <input  type="text" name="nome" id="inpNome">
+                <label for="nome">Nome do produto</label>
+                <input maxlength="50" required type="text" name="nome" id="inpNome">
             </div>
             <div>
                 
@@ -53,8 +53,8 @@
 
             <fieldset >
                 <legend>Categorias</legend>
-                <select class="w-full" name="categorias" id="categorias" multiple size="10">
-                    <option value="eletronico">Eletrônicos</option>
+                <select class="w-full flex flex-wrap" name="categorias" id="categorias" multiple size="10">
+                    <option value="eletronicos">Eletrônicos</option>
                     <option value="moda">Moda</option>
                     <option value="cozinha">Cozinha</option>
                     <option value="acessorios">Acessórios</option>
@@ -64,6 +64,8 @@
                     <option value="calcados">Calçados</option>
                     <option value="ferramentas">Ferramentas</option>
                     <option value="utilidades">Utilidades</option>
+                    <option value="para-pets">Para Pets</option>
+                    <option value="banho">Banho</option>
                 </select>
             </fieldset>
 

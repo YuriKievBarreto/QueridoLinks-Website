@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const routes = require('./routes/routes')
 const mongoose = require('mongoose')
-const middlewareGlobal = require('./middleware/middlewareGlobal')
+const {middlewareGlobal, SorteiaCategoria, produtosPorCategoria} = require('./middleware/middlewareGlobal')
 
 
 //conectando ao mongoDB atlas
@@ -21,8 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true })); // Para dados de formulário
 app.use(express.json()); // Para dados em JSON
 
-//middleware
-app.use(middlewareGlobal)
+//middlewares globais
+app.use(middlewareGlobal, SorteiaCategoria, produtosPorCategoria )
 //usando arquivo de rotas
 app.use(routes)
 
