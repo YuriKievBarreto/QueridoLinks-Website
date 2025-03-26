@@ -5,7 +5,7 @@ btnPrevia.addEventListener('click', e =>{
     const inpNome = document.getElementById('inpNome')
     const inpValor = document.getElementById('inpValor')
     const inpImg = document.getElementById('inpImg')
-
+    
 
     //previas
     const previaNome = document.getElementById('pNome')

@@ -69,7 +69,7 @@
         <section class="w-77/100 mx-auto mt-3 sm:grid grid-cols-3 gap-1  md:w-90/100 lg:w-77/100 hidden">
             <div class="col-span-2 row-span-2 bg-blue-300 flex overflow-hidden">
                 <img  src="/assets/imgs/carrossel/1.png" class=" carrossel w-full h-100/100  " alt="">
-                <img 0src="/assets/imgs/carrossel/2.png" class="carrossel  w-full h-100/100 " alt="">
+                <img src="/assets/imgs/carrossel/2.png" class="carrossel  w-full h-100/100 " alt="">
                 <img src="/assets/imgs/carrossel/3.png" class="carrossel  w-full h-100/100  " alt="">
 
                <div class="navegacao hidden sm:hidden md:hidden">
@@ -93,7 +93,7 @@
             <h1 class="text-end text-lg mb-2 md:text-lg">Ver todos -></h1>
             <div class="flex justify-start items-center  ">
                 <% let qtd = 0; %>
-                <% produtos.forEach(produto => {%>
+                <% produtosDinamicos.forEach(produto => {%>
                     
                     <% if(qtd < 8) { %> 
                         
@@ -132,7 +132,7 @@
             <div class="flex justify-around items-center flex-wrap gap-5 md:gap-7 md:mt-5 lg:gap-10 lg:justify-center  ">
 
                 <% qtd = 0; %>
-                <% produtos.forEach(produto => {%>
+                <% produtosDinamicos.forEach(produto => {%>
                     
                     <% if(qtd < 6) { %> 
                         
@@ -168,6 +168,7 @@
 
         <div  class="  w-95/100  mx-auto  mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
             <h1 class="text-start text-2xl  font-bold  text-[#05ABED] md:text-4xl lg:text-2xl lg:mb-4">Categorias</h1>
+            <h1 class="text-end text-lg mb-2 md:text-lg"><a href="/categorias">Ver todos -></a></h1>
             <div class=" exposicao flex justify-around items-center gap-4  flex-wrap lg:gap-0 lg:justify-start ">
                 <div class="item-categorias">
                     <img src="/assets/imgs/categorias/<%=categorias[3][0]%>.png" class="" alt="">
