@@ -12,6 +12,8 @@ router.post('/cadastro', post)
 router.get('/categorias', indexCategorias)
 router.post('/busca', Busca)
 
-
+router.criaRotaDinamica = function (url){
+    router.get(url, Busca)
+}
 
 module.exports = router

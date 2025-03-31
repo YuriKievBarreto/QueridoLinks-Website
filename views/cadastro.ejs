@@ -54,18 +54,12 @@
             <fieldset >
                 <legend>Categorias</legend>
                 <select class="w-full flex flex-wrap" name="categorias" id="categorias" multiple size="10">
-                    <option value="eletronicos">Eletrônicos</option>
-                    <option value="moda">Moda</option>
-                    <option value="cozinha">Cozinha</option>
-                    <option value="acessorios">Acessórios</option>
-                    <option value="audio">Áudio</option>
-                    <option value="fitness">Fitness</option>
-                    <option value="esportivo">Esportivo</option>
-                    <option value="calcados">Calçados</option>
-                    <option value="ferramentas">Ferramentas</option>
-                    <option value="utilidades">Utilidades</option>
-                    <option value="para-pets">Para Pets</option>
-                    <option value="banho">Banho</option>
+       
+                <% categoriasParaCadastro.forEach(cat => { %> 
+                    <option class="text-xl border-b-1" value=<%= cat %>> <%= cat %> </option>
+                <%}); %>
+                        
+                  
                 </select>
             </fieldset>
 
@@ -92,6 +86,16 @@
         </div>
 
         <button id="previa" class="text-xl border-2 rounded-lg p-1 mx-auto mt-3 bg-white block">Exibir previa</button>
+
+
+        <div class="mx-auto  ">
+            <h1 class="text-center text-2xl  border-t-1 b-amber-300 mb-4 mt-4 ">criar categoria</h1>
+            <form action="/cadastro" method="POST">
+                <label for="nomeCat">Nome da categoria</label>
+                <input type="text" name="nomeCat" id="" class="bg-white rounded-sm b-black border-2">
+                <button type="submit" class="bg-white rounded-sm b-black border-2">enviar</button>
+            </form>
+        </div>
     </div>
    </main>
     
