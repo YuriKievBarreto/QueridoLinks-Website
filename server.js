@@ -22,12 +22,12 @@ app.use(express.urlencoded({ extended: true })); // Para dados de formulário
 app.use(express.json()); // Para dados em JSON
 
 //middlewares globais
-app.use(middlewareGlobal, SorteiaCategoria, produtosPorCategoria )
+app.use(middlewareGlobal, SorteiaCategoria, produtosPorCategoria)
 //usando arquivo de rotas
 app.use(routes)
 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    console.log(`Server http://localhost:${port}`);
+    console.log(`Server http://localhost:${port}/cadastro`);
   });
