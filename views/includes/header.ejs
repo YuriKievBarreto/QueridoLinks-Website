@@ -2,13 +2,13 @@
 
     <div class="flex items-center gap-4 mr-4 mt-2 md:mt-0 ">
         <img src="/assets/imgs/logo.png" class="w-10 h-10 inline-block md:w-15 md:h-15 lg:w-15 lg:h-15 lg:">
-        <h1 class="text-xl inline-block text-white font-bold md:text-4xl lg:text-4xl">QueridoLinks</h1>
+        <h1 class="text-xl inline-block text-white font-bold md:text-4xl lg:text-4xl"><a href="/">QueridoLinks</a></h1>
         <img src="/assets/imgs/X-logo.png" class="w-8 h-8 inline-block md:hidden">
         <img src="/assets/imgs/whatsapp.png" class="w-7 h-7 inline-block md:hidden">
     </div>
 
-    <form class="flex items-center gap-1  p-1 rounded-sm" >
-        <input type="text" name="" id="" placeholder="Buscar em Querido Links" class=" w-70 h-10 p-2 rounded-sm bg-white md:w-90 md:h-12 lg:w-180 lg:h-11">
+    <form class="flex items-center gap-1  p-1 rounded-sm" action="/busca" method="POST" >
+        <input type="text" name="busca" id="" placeholder="Buscar em Querido Links" class=" w-70 h-10 p-2 rounded-sm bg-white md:w-90 md:h-12 lg:w-180 lg:h-11">
         <button class=" w-10 h-10 bg-white bg-[url(/assets/imgs/procurar.png)] bg-cover rounded-sm md:w-12 md:h-12 lg:w-11 lg:h-11"  ></button>
     </form>        
 </header>

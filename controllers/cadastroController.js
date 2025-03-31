@@ -7,7 +7,6 @@ const Produto = require('../models/cadastroModel')
  function indexCadastro(req, res, next) {
     res.render('cadastro')
     next()
-    
 }
 
 //trata o post do form do cadastro

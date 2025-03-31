@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Querido Links-resultados</title>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/classesPessoais.css">
+</head>
+<body class="bebasNeue">
+  
+    <main class="w-screen m-auto    bg-[rgba(255,255,255,0.77)] min-h-80" > 
+        <%- include('includes/header') %>
+        <div class="w-95/100 m-auto">
+           
+            <% if(produtosBusca.length < 1)  {%> 
+                <h1 class=" w-95/100 text-start text-xl mb-1 font-bold pt-4 lg:pt-30   text-[#05ABED] md:text-3xl lg:text-3xl lg:mb-3">Nenhum resultado encontrado para: "<%= nomeBusca%>"</h1>
+
+                <img class=" h-80/100 w-80/100 mx-auto lg:h-30/100 lg:w-30/100 " src="assets/imgs/search.png" alt="erro-busca">
+
+                <h1 class=" w-80/100 mx-auto text-center text-xl mb-1 font-bold lg:w-30/100   text-[#05ABED] md:text-3xl lg:text-xl lg:mb-3 lg:mt-[-10px]">Tente usar palavras-chave mais genericas como "Óculos de sol" ou "Camisetas"</h1>
+                
+                
+                
+            <% } else  {%> 
+                <h1 class=" w-95/100 text-start text-xl mb-1 font-bold pt-4 lg:pt-30 text-[#05ABED] md:text-3xl lg:text-3xl lg:mb-3">Exibindo resultados para: "<%= nomeBusca%>"</h1>
+
+                <div  class="exposicao  mx-auto mb-10   p-3 shadow-2xl border-t-2 border-[#05ABED] ">
+                
+                    <div class="flex justify-around items-center flex-wrap gap-5 md:gap-7 md:mt-5 lg:gap-10 lg:justify-center  ">
+                        <% qtd = 0; %>
+                        <% produtosBusca.forEach(produto => {%>
+            
+                            <% if(qtd < 6) { %>
+            
+                                <% if(qtd > 3) { %>
+            
+                                    <div class="item-destaque hidden sm:hidden md:hidden lg:block">
+                                        <img src="<%= produto.imagem %>" class=""  alt="">
+                                        <p class="text-center text-bold text-md font-bold   "><%= produto.nome %></p>
+                                        <% console.log('rodando') %>
+                                    </div>
+                                <% } else { %>
+                                    <div class="item-destaque">
+                                        <img src="<%= produto.imagem %>" class=""  alt="">
+                                        <p class="text-center text-bold text-sm font-bold "><%= produto.nome %></p>
+            
+                                    </div>
+            
+            
+                                <% } %>
+                                <% qtd++;
+            
+                                %>
+            
+                            <% } %>
+            
+                        <%}); %>
+            
+                    </div>
+                
+            <% } %>
+            
+        </div>
+       <% ; %>
+
+
+        </div>
+
+
+    </main>
+    
+</body>
+</html>

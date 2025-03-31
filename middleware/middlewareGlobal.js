@@ -97,4 +97,9 @@ function cortaString(str){
     return str.length > 50 ? str.slice(0, 35) + "..." : str;
 }
 
+
+function defineBusca(){
+    
+}
+
 module.exports = {middlewareGlobal, SorteiaCategoria, produtosPorCategoria}
