@@ -8,6 +8,7 @@ async function middlewareGlobal (req, res, next){
         
         produtosDinamicos.forEach(produto =>{
             produto.nome = cortaString(produto.nome)
+            
         })
         
         res.locals.produtosDinamicos = produtosDinamicos
@@ -25,16 +26,16 @@ async function middlewareGlobal (req, res, next){
 }
 
 const categorias = [
-    ["camiseta", "Moda"],
-    ["celular", "Eletrônicos"],
-    ["brinquedo-pet", "Para pets"],
-    ["acessorio", "Acessórios"],
-    ["fones-de-ouvido", "Áudio"],
-    ["corrida", "Fitness"],
-    ["banho", "Banho"],
-    ["tenis-de-corrida", "Calçados"],
-    ["engrenagem", "Ferramentas"],
-    ["utilidades", "Utilidades"]
+    ["camiseta", "Moda", 'moda'],
+    ["celular", "Eletrônicos", 'eletronicos'],
+    ["brinquedo-pet", "Para pets", 'para-pets'],
+    ["acessorio", "Acessórios", 'acessorios'],
+    ["fones-de-ouvido", "Áudio", 'audio'],
+    ["corrida", "Fitness", 'fitness'],
+    ["banho", "Banho", 'banho'],
+    ["tenis-de-corrida", "Calçados", 'calcados'],
+    ["engrenagem", "Ferramentas", 'ferramentas'],
+    ["utilidades", "Utilidades", 'utilidades']
 ];
 
 //sorteia as categorias que vão ser exibidas no inicio da pagina inicial
@@ -65,18 +66,22 @@ function SorteiaCategoria(req, res, next) {
 async function produtosPorCategoria(req, res, next){
     qtd = categorias.length * 6
     const produtosCategorizados = []
-
+    const categoriasParaBusca = []
     for(let categoria of categorias){
         let stringFormatada = categoria[1]
         .toLowerCase()
         .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         .replace('-', '')
 
-        
+        categoriasParaBusca.push(stringFormatada)
+        res.locals.categoriasParaBusca = categoriasParaBusca
+       
         let produtos = await Produto.aggregate([
-        { $match: { categorias: { $in: [stringFormatada] } } }, // Filtra pela categoria 
-        { $sample: { size: 6 } } // Pega 6 produtos aleatórios
+        { $match: { categorias: { $in: [stringFormatada] } } }, // filtra pela categoria 
+        { $sample: { size: 6 } } // pega 6 produtos aleatórios
         ])
+
+        
 
         
         
@@ -85,7 +90,9 @@ async function produtosPorCategoria(req, res, next){
 
     }
 
-   
+    console.log('catego busca: ', produtosCategorizados)
+    console.log()
+
       
       res.locals.categoriasH1 = categorias.map(subArray => subArray[1])
       res.locals.produtosCategorizados = produtosCategorizados
@@ -94,12 +101,9 @@ async function produtosPorCategoria(req, res, next){
 }
 //reduz a string a X caracteres e adiciona ... no final
 function cortaString(str){
-    return str.length > 50 ? str.slice(0, 35) + "..." : str;
+    return str.length > 35 ? str.slice(0, 35) + "..." : str;
 }
 
 
-function defineBusca(){
-    
-}
 
 module.exports = {middlewareGlobal, SorteiaCategoria, produtosPorCategoria}

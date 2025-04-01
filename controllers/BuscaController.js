@@ -9,7 +9,7 @@ async function Busca(req, res, next) {
         console.log('entrei no if de busca')
         try {
             console.log('tentei')
-            const produtos = await Produto.find({ nome: { $regex: busca, $options: 'i' } }); // Busca aproximada (case-insensitive)
+            const produtos = await Produto.find({ nome: { $regex: busca, $options: 'i' } }); 
             res.locals.produtosBusca = produtos
             res.locals.nomeBusca = busca
             console.log(produtos.length)

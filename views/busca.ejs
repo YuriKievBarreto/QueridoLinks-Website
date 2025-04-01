@@ -22,15 +22,17 @@
                     <% produtosDaCategoria.forEach(produto => {%>
                         <% if(qtd < 6) { %>
                             <% if(qtd > 3) { %>
-                                <div class="item-destaque hidden sm:hidden md:hidden lg:block">
+                                <div class="item-destaque hover:cursor-pointer hidden sm:hidden md:hidden lg:block">
                                     <img src="<%= produto.imagem %>" class=""  alt="">
                                     <p class="text-center text-bold text-md font-bold   "><%= produto.nome %></p>
+                                    <span data-link="<%= produto.linkAfid %>"></span>
                                     <% console.log('rodando') %>
                                 </div>
                             <% } else { %>
-                                <div class="item-destaque">
+                                <div class="item-destaque hover:cursor-pointer">
                                     <img src="<%= produto.imagem %>" class=""  alt="">
                                     <p class="text-center text-bold text-sm font-bold "><%= produto.nome %></p>
+                                    <span data-link="<%= produto.linkAfid %>"></span>
                                 </div>
                             <% } %>
                             <% qtd++;
@@ -63,15 +65,17 @@
                 
                                     <% if(qtd > 3) { %>
                 
-                                        <div class="item-destaque hidden sm:hidden md:hidden lg:block">
+                                        <div class="item-destaque hover:cursor-pointer hidden sm:hidden md:hidden lg:block">
                                             <img src="<%= produto.imagem %>" class=""  alt="">
                                             <p class="text-center text-bold text-md font-bold   "><%= produto.nome %></p>
                                             <% console.log('rodando') %>
+                                            <span data-link="<%= produto.linkAfid %>"></span>
                                         </div>
                                     <% } else { %>
-                                        <div class="item-destaque">
+                                        <div class="item-destaque hover:cursor-pointer">
                                             <img src="<%= produto.imagem %>" class=""  alt="">
                                             <p class="text-center text-bold text-sm font-bold "><%= produto.nome %></p>
+                                            <span data-link="<%= produto.linkAfid %>"></span>
                 
                                         </div>
                 
@@ -97,7 +101,7 @@
                 <%} %>
         </div>
     </main>
-    
+    <script src="/js/links.js"></script>
 </body>
 </html>
 

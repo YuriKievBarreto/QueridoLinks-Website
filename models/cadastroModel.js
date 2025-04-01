@@ -8,6 +8,8 @@ const produtoSchema = new mongoose.Schema({
     loja: String,
     categorias: [String]
 })
+
+
 const Produto = mongoose.model('Produto', produtoSchema);
 
 module.exports = Produto
