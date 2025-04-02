@@ -19,7 +19,7 @@ document.addEventListener('click', e => {
 
         // Se um <span> for encontrado, você pode fazer algo com ele
         if (span) {
-            const link = 'https://' + span.getAttribute("data-link");
+            const link = span.getAttribute("data-link");
             console.log(link);  // ou abrir o link com window.open
             window.open(link, "_blank");
         } else {

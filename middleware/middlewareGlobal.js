@@ -2,7 +2,7 @@ const Produto = require('../models/cadastroModel')
 let produtos = []
 async function middlewareGlobal (req, res, next){
     try{
-        produtos = await Produto.find()
+        produtos = await await Produto.aggregate([{$sample: {size: 1000}}])
         res.locals.produtos = produtos
         let produtosDinamicos = await Produto.aggregate([{$sample: {size: 10}}])
         

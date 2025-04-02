@@ -11,6 +11,7 @@ const Categorias = require('../models/categoriasModel')
     { categorias: 1, _id: 0 }
   )
   res.locals.categoriasParaCadastro = categoriasParaCadastro[0].categorias
+  console.log( res.locals.categoriasParaCadastro)
   
     res.render('cadastro')
     next()
