@@ -45,16 +45,36 @@
 
             <fieldset >
                 <legend>Categorias</legend>
-                <select class="w-full flex flex-wrap" name="categorias" id="categorias" multiple size="10">
-       
-                <% categoriasParaCadastro.forEach(cat => { %> 
-                    <option class="text-xl border-b-1" value=<%= cat %>> <%= cat %> </option>
-                <%}); %>
+                <!--<select class="w-full flex flex-wrap" name="categorias" id="categorias" multiple size="10">
+                </select>-->
+                
+               
+                    <% categoriasParaCadastro.forEach(cat => { %> 
+                    <details>
+                        <summary><label for=""><%= cat %></label>
+                        <input type="checkbox" name="<%= cat %>" id=""></summary>
+                        </summary> 
+
+                        <label for=""><%= cat %></label>
+                        <input type="checkbox" name="<%= cat %>" id="">
+
+                        <label for=""><%= cat %></label>
+                        <input type="checkbox" name="<%= cat %>" id="">
+
+                        <label for=""><%= cat %></label>
+                        <input type="checkbox" name="<%= cat %>" id="">
+                        
+                    </details>
+                        
+                    <%}); %>
+                
+
+                
                         
                   
-                </select>
+                
             </fieldset>
-
+            
             <fieldset>
                 <legend>Lojas</legend>
                 <label for="shopee">shopee</label>
@@ -67,6 +87,35 @@
 
             <button type="submit">enviar</button>
         </form>
+
+        
+        <div class="mx-auto  ">
+            <h1 class="text-center text-2xl  border-t-1 b-amber-300 mb-4 mt-4 ">criar categoria</h1>
+            <form action="/cadastro" method="POST" class="flex flex-col">
+                <label for="nomeCat">Nome da categoria</label>
+                <input type="text" name="nomeCat" id="" class="bg-white rounded-sm b-black border-2">
+                <label for="catExib">Nome de Exibicao da categoria</label>
+                <input type="text" name="catExib" id="" class="bg-white rounded-sm b-black border-2">
+                <h1 class="text-2xl font-bold border-t-2 border-t-black mt-5">subcategorias</h1>
+                <label for="subCat1">Nome da subcategoria 1</label>
+                <input type="text" name="SubCat1" id="" class="bg-white rounded-sm b-black border-2">
+                <label for="subCat1">Nome de Exibicao da subcategoria 1</label>
+                <input type="text" name="nomeExib1" id="" class="bg-white rounded-sm b-black border-b-2  border-b-red-400 mb-4">
+                
+
+                <label for="subCat1" class="border-t-2 border-black mt-4">Nome da subcategoria 2</label>
+                <input type="text" name="SubCat2" id="" class="bg-white rounded-sm b-black border-2 ">
+                <label for="subCat1">Nome de Exibicao da subcategoria 2</label>
+                <input type="text" name="nomeExib3" id="" class="bg-white rounded-sm b-black border-2 b-black border-b-2  mb-4">
+
+                <label for="subCat1" class="border-t-2 border-black mt-4">Nome da subcategoria 3</label>
+                <input type="text" name="SubCat3" id="" class="bg-white rounded-sm b-black border-2 ">
+                <label for="subCat1">Nome de Exibicao da subcategoria 3</label>
+                <input type="text" name="nomeExib3" id="" class="bg-white rounded-sm b-black border-2 b-black border-b-2  border-b-red-400 mb-4">
+                
+                <button type="submit" class="bg-white rounded-sm b-black border-2">enviar</button>
+            </form>
+        </div>
     </div>
 
     <div class="w-3/7  mx-auto rounded-xl p-4">
@@ -79,15 +128,12 @@
 
         <button id="previa" class="text-xl border-2 rounded-lg p-1 mx-auto mt-3 bg-white block">Exibir previa</button>
 
+        <details>
+            <summary><input type="text" name="" id=""></summary>
+            <p>Este é o conteúdo que aparece quando você clica.</p>
+        </details>
 
-        <div class="mx-auto  ">
-            <h1 class="text-center text-2xl  border-t-1 b-amber-300 mb-4 mt-4 ">criar categoria</h1>
-            <form action="/cadastro" method="POST">
-                <label for="nomeCat">Nome da categoria</label>
-                <input type="text" name="nomeCat" id="" class="bg-white rounded-sm b-black border-2">
-                <button type="submit" class="bg-white rounded-sm b-black border-2">enviar</button>
-            </form>
-        </div>
+
     </div>
    </main>
     

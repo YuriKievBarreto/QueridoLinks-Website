@@ -37,9 +37,14 @@
 
 .formulario-cadastro>fieldset{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     
+}
+
+label{
+    font-size: 20px;
 }
 
 legend{
