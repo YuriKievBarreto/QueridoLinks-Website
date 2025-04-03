@@ -90,8 +90,7 @@ async function produtosPorCategoria(req, res, next){
 
     }
 
-    console.log('catego busca: ', produtosCategorizados)
-    console.log()
+    
 
       
       res.locals.categoriasH1 = categorias.map(subArray => subArray[1])

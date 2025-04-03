@@ -1,0 +1,230 @@
+[
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "modaMasculina",
+        "NomeDeExibicao": "Moda masculina"
+      },
+      "sub2": {
+        "nome": "modaFeminina",
+        "NomeDeExibicao": "Moda feminina"
+      },
+      "sub3": {
+        "nome": "acessoriosModa",
+        "NomeDeExibicao": "Acessórios de moda"
+      }
+    },
+    "_id": "67eed5ef8587b925774094ae",
+    "nome": "moda",
+    "NomeDeExibicao": "Moda"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "smartphones",
+        "NomeDeExibicao": "Smartphones"
+      },
+      "sub2": {
+        "nome": "notebooks",
+        "NomeDeExibicao": "Notebooks"
+      },
+      "sub3": {
+        "nome": "acessoriosEletronicos",
+        "NomeDeExibicao": "Acessórios eletrônicos"
+      }
+    },
+    "_id": "67eed5ef8587b925774094af",
+    "nome": "eletronicos",
+    "NomeDeExibicao": "Eletrônicos"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "racoes",
+        "NomeDeExibicao": "Rações"
+      },
+      "sub2": {
+        "nome": "brinquedosPets",
+        "NomeDeExibicao": "Brinquedos para pets"
+      },
+      "sub3": {
+        "nome": "acessoriosPets",
+        "NomeDeExibicao": "Acessórios para pets"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b0",
+    "nome": "para-pets",
+    "NomeDeExibicao": "Para Pets"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "oculos",
+        "NomeDeExibicao": "Óculos"
+      },
+      "sub2": {
+        "nome": "relogios",
+        "NomeDeExibicao": "Relógios"
+      },
+      "sub3": {
+        "nome": "joias",
+        "NomeDeExibicao": "Joias e bijuterias"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b1",
+    "nome": "acessorios",
+    "NomeDeExibicao": "Acessórios"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "fones",
+        "NomeDeExibicao": "Fones de ouvido"
+      },
+      "sub2": {
+        "nome": "caixasSom",
+        "NomeDeExibicao": "Caixas de som"
+      },
+      "sub3": {
+        "nome": "microfones",
+        "NomeDeExibicao": "Microfones"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b2",
+    "nome": "audio",
+    "NomeDeExibicao": "Áudio"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "roupasEsportivas",
+        "NomeDeExibicao": "Roupas esportivas"
+      },
+      "sub2": {
+        "nome": "suplementos",
+        "NomeDeExibicao": "Suplementos"
+      },
+      "sub3": {
+        "nome": "equipamentosAcademia",
+        "NomeDeExibicao": "Equipamentos de academia"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b3",
+    "nome": "fitness",
+    "NomeDeExibicao": "Fitness"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "toalhas",
+        "NomeDeExibicao": "Toalhas"
+      },
+      "sub2": {
+        "nome": "sabonetes",
+        "NomeDeExibicao": "Sabonetes"
+      },
+      "sub3": {
+        "nome": "kitsHigiene",
+        "NomeDeExibicao": "Kits de higiene"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b4",
+    "nome": "banho",
+    "NomeDeExibicao": "Banho"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "tenis",
+        "NomeDeExibicao": "Tênis"
+      },
+      "sub2": {
+        "nome": "sandalias",
+        "NomeDeExibicao": "Sandálias"
+      },
+      "sub3": {
+        "nome": "botas",
+        "NomeDeExibicao": "Botas"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b5",
+    "nome": "calcados",
+    "NomeDeExibicao": "Calçados"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "panelas",
+        "NomeDeExibicao": "Panelas"
+      },
+      "sub2": {
+        "nome": "eletroportateis",
+        "NomeDeExibicao": "Eletroportáteis"
+      },
+      "sub3": {
+        "nome": "talheres",
+        "NomeDeExibicao": "Talheres"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b6",
+    "nome": "cozinha",
+    "NomeDeExibicao": "Cozinha"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "barbearia",
+        "NomeDeExibicao": "Cuidados para barbearia"
+      },
+      "sub2": {
+        "nome": "modaMasculina",
+        "NomeDeExibicao": "Moda masculina"
+      },
+      "sub3": {
+        "nome": "acessoriosMasculinos",
+        "NomeDeExibicao": "Acessórios masculinos"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b7",
+    "nome": "produtos-masculinos",
+    "NomeDeExibicao": "Produtos Masculinos"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "cadernos",
+        "NomeDeExibicao": "Cadernos"
+      },
+      "sub2": {
+        "nome": "canetas",
+        "NomeDeExibicao": "Canetas"
+      },
+      "sub3": {
+        "nome": "materiaisDesenho",
+        "NomeDeExibicao": "Materiais para desenho"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b8",
+    "nome": "papelaria-e-arte",
+    "NomeDeExibicao": "Papelaria e Arte"
+  },
+  {
+    "subcategorias": {
+      "sub1": {
+        "nome": "brinquedos",
+        "NomeDeExibicao": "Brinquedos"
+      },
+      "sub2": {
+        "nome": "roupasInfantis",
+        "NomeDeExibicao": "Roupas infantis"
+      },
+      "sub3": {
+        "nome": "materiaisEscolares",
+        "NomeDeExibicao": "Materiais escolares"
+      }
+    },
+    "_id": "67eed5ef8587b925774094b9",
+    "nome": "infantis",
+    "NomeDeExibicao": "Infantis"
+  }
+]

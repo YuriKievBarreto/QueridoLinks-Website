@@ -50,19 +50,25 @@
                 
                
                     <% categoriasParaCadastro.forEach(cat => { %> 
-                    <details>
-                        <summary><label for=""><%= cat %></label>
-                        <input type="checkbox" name="<%= cat %>" id=""></summary>
+                    <details >
+                        <summary><label for=""><%= cat.nome %></label>
+                        <input type="checkbox" name="<%= cat.nome %>" id=""></summary>
                         </summary> 
 
-                        <label for=""><%= cat %></label>
-                        <input type="checkbox" name="<%= cat %>" id="">
-
-                        <label for=""><%= cat %></label>
-                        <input type="checkbox" name="<%= cat %>" id="">
-
-                        <label for=""><%= cat %></label>
-                        <input type="checkbox" name="<%= cat %>" id="">
+                        <div class="flex gap-3">
+                            <div class="border-2 border-black p-1">
+                                <label for=""><%= cat.subcategorias.sub1.NomeDeExibicao %></label>
+                                <input type="checkbox" name="<%= cat.subcategorias.sub1.nome%>" id="">
+                            </div>
+                            <div class="border-2 border-black p-1">
+                                <label for=""><%= cat.subcategorias.sub2.NomeDeExibicao %></label>
+                                <input type="checkbox" name="<%= cat.subcategorias.sub2.nome%>" id="">
+                            </div>
+                            <div class="border-2 border-black p-1">
+                                <label for=""><%= cat.subcategorias.sub3.NomeDeExibicao %></label>
+                                <input type="checkbox" name="<%= cat.subcategorias.sub3.nome %>" id="">
+                            </div>
+                        </div>
                         
                     </details>
                         
@@ -77,11 +83,15 @@
             
             <fieldset>
                 <legend>Lojas</legend>
-                <label for="shopee">shopee</label>
-                <input type="radio" name="loja" value="shopee">
+                <div>
+                    <label for="shopee">shopee</label>
+                    <input type="radio" name="loja" value="shopee">
+                </div>
 
-                <label for="mercadoLivre">mercado Livre</label>
-                <input type="radio" name="loja" value="mercadoLivre">
+                <div>
+                    <label for="mercadoLivre">mercado Livre</label>
+                    <input type="radio" name="loja" value="mercadoLivre">
+                </div>
 
             </fieldset>
 
@@ -89,6 +99,19 @@
         </form>
 
         
+        
+    </div>
+
+    <div class="w-3/7  mx-auto rounded-xl p-4">
+        <h1 class="text-3xl text-center">previa</h1>
+        <div  class="item-previa m-auto">
+            <img id="pImg" src="https://pbs.twimg.com/media/GfHiBmSXgAArPfW?format=jpg&name=900x900" alt="">
+            <p id="pNome" class="text-center"></p>
+            <p id="pValor" class="text-center">valor</p>
+        </div>
+
+        <button id="previa" class="text-xl border-2 rounded-lg p-1 mx-auto mt-3 bg-white block">Exibir previa</button>
+
         <div class="mx-auto  ">
             <h1 class="text-center text-2xl  border-t-1 b-amber-300 mb-4 mt-4 ">criar categoria</h1>
             <form action="/cadastro" method="POST" class="flex flex-col">
@@ -116,22 +139,6 @@
                 <button type="submit" class="bg-white rounded-sm b-black border-2">enviar</button>
             </form>
         </div>
-    </div>
-
-    <div class="w-3/7  mx-auto rounded-xl p-4">
-        <h1 class="text-3xl text-center">previa</h1>
-        <div  class="item-previa m-auto">
-            <img id="pImg" src="https://pbs.twimg.com/media/GfHiBmSXgAArPfW?format=jpg&name=900x900" alt="">
-            <p id="pNome" class="text-center"></p>
-            <p id="pValor" class="text-center">valor</p>
-        </div>
-
-        <button id="previa" class="text-xl border-2 rounded-lg p-1 mx-auto mt-3 bg-white block">Exibir previa</button>
-
-        <details>
-            <summary><input type="text" name="" id=""></summary>
-            <p>Este é o conteúdo que aparece quando você clica.</p>
-        </details>
 
 
     </div>

@@ -14,8 +14,7 @@ router.post('/cadastro', post)
 router.get('/categorias', indexCategorias)
 router.post('/busca', Busca)
 
-CarregaCategorias()
-
+/*CarregaCategorias()
 
 async function CarregaCategorias(){
     const categoriasParaCadastro = await Categorias.find({},{ categorias: 1, _id: 0 })
@@ -25,6 +24,9 @@ async function CarregaCategorias(){
     router.get(`/categorias:${categoria}`,Busca)
     }
     
-}
+}*/
+
+
+
 
 module.exports = router

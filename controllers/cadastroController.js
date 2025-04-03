@@ -6,13 +6,9 @@ const Categorias = require('../models/categoriasModel')
 
 // Controlador para a página principal
  async function indexCadastro(req, res, next) {
-  const categoriasParaCadastro = await Categorias.find(
-    {},
-    { categorias: 1, _id: 0 }
-  )
-  res.locals.categoriasParaCadastro = categoriasParaCadastro[0].categorias
-  console.log( res.locals.categoriasParaCadastro)
-  
+  const categoriasParaCadastro = await Categorias.find({})
+  console.log(categoriasParaCadastro[0].subcategorias.sub1.nome)
+  res.locals.categoriasParaCadastro = categoriasParaCadastro
     res.render('cadastro')
     next()
 }
