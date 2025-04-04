@@ -6,27 +6,28 @@ const Categorias = require('../models/categoriasModel')
 
 // Controlador para a página principal
  async function indexCadastro(req, res, next) {
-  const categoriasParaCadastro = await Categorias.find(
-    {},
-    { categorias: 1, _id: 0 }
-  )
-  res.locals.categoriasParaCadastro = categoriasParaCadastro[0].categorias
-  
+  const categoriasParaCadastro = await Categorias.find({})
+
+  res.locals.categoriasParaCadastro = categoriasParaCadastro
     res.render('cadastro')
     next()
 }
 
 //trata o post do form do cadastro
  async function post(req, res, next) {
-  console.log('Estou rodando');
   await salvarProduto(req, res);
+  next()
 }
 
 
 async function salvarProduto(req, res) {
-  const { nome, valor, linkAfid, imagem, loja, categorias, nomeCat } = req.body;
+  const { nome, valor, linkAfid, imagem, loja, categorias} = req.body;
+  const {NomeDeExibicao} = req.body
+  console.log(NomeDeExibicao)
   
-  if(nome){
+  
+  if(valor){
+    console.log('entrei no cadastro de produto')
     try {
       // Criando o produto com os dados do formulário
       const produtoSalvo = await Produto.create({
@@ -45,33 +46,40 @@ async function salvarProduto(req, res) {
       res.status(500).json({ message: 'Erro ao salvar produto', error: e });
     }
   }
-
-  if(nomeCat){
     
+  if(NomeDeExibicao){
+    console.log('entrei no cadastro de categoria')
+    const {nome, NomeDeExibicao, SubCat1, SubCat2, SubCat3, nomeExib1, nomeExib2, nomeExib3 } = req.body
+    const subcategorias = {
+      sub1: {nome: SubCat1, NomeDeExibicao: nomeExib1},
+      sub2:{nome: SubCat2, NomeDeExibicao: nomeExib2},
+      sub3:{nome: SubCat3, NomeDeExibicao: nomeExib3}
 
-    
-
-    
-    
-
-    try{
-      const categoria = await Categorias.findByIdAndUpdate('67eaf98dd5cedcaf35e53938', // Filtro para encontrar o documento
-        { $push: { categorias: nomeCat } },
-        {new: true} 
-      )
-
-      
-      console.log('categoria registrada')
+     }
+     console.log('at least entrei')
+    try {
+        // Criando o produto com os dados do formulário
+        const categoriaSalva = await Categorias.create({
+        nome,
+        NomeDeExibicao,
+        subcategorias
+         
+      });
+  
+      console.log('categoria salvo com sucesso:', categoriaSalva);
       res.redirect('/cadastro')
-    }catch(e){
-      console.log('erro ao registrar categoria: ', e)
+    } catch (e) {
+      console.log(e);
+      res.status(500).json({ message: 'Erro ao salvar produto', error: e });
     }
 
 
+  }else{
+    console.log('nao detectei o nome exibicao')
   }
  
 
-
+  
 }
 
 

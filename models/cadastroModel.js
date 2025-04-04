@@ -6,7 +6,7 @@ const produtoSchema = new mongoose.Schema({
     linkAfid: String,
     imagem: String,
     loja: String,
-    categorias: [String]
+    categorias: [String],
 })
 
 

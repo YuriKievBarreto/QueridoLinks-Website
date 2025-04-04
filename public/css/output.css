@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(0.704 0.191 22.216);
     --color-amber-50: oklch(0.987 0.022 95.277);
     --color-amber-200: oklch(0.924 0.12 95.746);
     --color-amber-600: oklch(0.666 0.179 58.318);
@@ -242,6 +243,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -356,9 +360,6 @@
   .w-70 {
     width: calc(var(--spacing) * 70);
   }
-  .w-70\/100 {
-    width: calc(70/100 * 100%);
-  }
   .w-77\/100 {
     width: calc(77/100 * 100%);
   }
@@ -457,12 +458,21 @@
     border-right-style: var(--tw-border-style);
     border-right-width: 1px;
   }
-  .border-b-1 {
+  .border-b-2 {
     border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
   }
   .border-\[\#05ABED\] {
     border-color: #05ABED;
+  }
+  .border-black {
+    border-color: var(--color-black);
+  }
+  .border-t-black {
+    border-top-color: var(--color-black);
+  }
+  .border-b-red-400 {
+    border-bottom-color: var(--color-red-400);
   }
   .bg-\[\#2B7FFF\] {
     background-color: #2B7FFF;
@@ -608,6 +618,9 @@
   }
   .text-\[\#05ABED\] {
     color: #05ABED;
+  }
+  .text-\[\#E63946\] {
+    color: #E63946;
   }
   .text-\[\#FFB81C\] {
     color: #FFB81C;
@@ -774,6 +787,12 @@
       line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
   .lg\:fixed {
     @media (width >= 64rem) {
       position: fixed;
@@ -864,11 +883,6 @@
       justify-content: flex-start;
     }
   }
-  .lg\:gap-0 {
-    @media (width >= 64rem) {
-      gap: calc(var(--spacing) * 0);
-    }
-  }
   .lg\:gap-4 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 4);
@@ -897,6 +911,11 @@
   .lg\:pt-30 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 30);
+    }
+  }
+  .lg\:pb-5 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 5);
     }
   }
   .lg\:text-2xl {
