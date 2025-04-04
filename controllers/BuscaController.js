@@ -37,10 +37,23 @@ async function Busca(req, res, next) {
    }
 
     //pega os produtos das 3 subcategorias referentes a categoria do produto
-    const {subcategorias} = await Categorias.findOne({nome: categoria})
-    
-    res.locals.subcategorias = Object.values(subcategorias)
+    let {subcategorias} = await Categorias.findOne({nome: categoria})
+    subcategorias = Object.values(subcategorias)
+    res.locals.subcategorias = subcategorias
+    console.log("--------------------------------")
+    console.log(res.locals.subcategorias)
+    console.log("--------------------------------")
+    let produtosSubCat = []
+    for(let subcat of subcategorias){
+        let produtosDaSubCat = await Produto.find({ categorias: {$in: [subcat.nome]}})
+        produtosSubCat.push(produtosDaSubCat)
+    }
 
+    console.log("--------------------------------")
+    produtosSubCat[2].forEach(elem => (console.log(elem)))
+    console.log("--------------------------------")
+    
+    res.locals.produtosSubCat = produtosSubCat
 
     res.render('busca')
 

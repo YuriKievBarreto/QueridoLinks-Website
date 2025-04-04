@@ -35,14 +35,14 @@
                     <%}); %>
                 </div>
                 
-                <% subcategorias.forEach(subCat => { %>
+                <% subcategorias.forEach((subCat, indice2) => { %>
                     <h1 class=" w-95/100 text-start text-2xl mb-1 font-bold pt-4 lg:pt-30 text-[#05ABED] md:text-3xl lg:text-3xl lg:mb-3">
                         Produtos em <%= subCat.NomeDeExibicao %>
                     </h1>
                     <div class="exposicao  mx-auto mb-10   p-3 shadow-2xl border-t-2 border-[#05ABED] ">
                         <div class="flex  justify-around items-center flex-wrap gap-5 md:gap-7 md:mt-5 lg:gap-10 lg:justify-center">
                             <% qtd = 0; %>
-                            <% produtosDaCategoria.forEach(produto => { %>
+                            <% produtosSubCat[indice2].forEach(produto => { %>
                                 <% if(qtd < 12) { %>
                                     <% if(qtd > 5) { %>
                                         <div class="item-destaque hover:cursor-pointer hidden sm:hidden md:hidden lg:block">
