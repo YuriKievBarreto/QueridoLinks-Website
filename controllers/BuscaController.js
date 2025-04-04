@@ -1,7 +1,8 @@
 const Produto = require('../models/cadastroModel')
+const Categorias = require('../models/categoriasModel')
 
 async function Busca(req, res, next) {
-   
+    let categoria = Object.values( req.params)[0].replace(':', '')
     const {busca} = req.body
     console.log(busca)
     //exibe produtos referentes a busca
@@ -23,7 +24,6 @@ async function Busca(req, res, next) {
     //exibe as categorias
    if(req.params && !busca){
     console.log('entrei no if de de parametros')
-    let categoria = Object.values( req.params)[0].replace(':', '')
     const produtosCrus = res.locals.produtos
     const produtosDaCategoria = produtosCrus.filter(produto => produto.categorias.some(
         elemento => elemento === categoria
@@ -33,7 +33,13 @@ async function Busca(req, res, next) {
     res.locals.produtosDaCategoria = produtosDaCategoria
     res.locals.categoria = categoria
     
+   
    }
+
+    //pega os produtos das 3 subcategorias referentes a categoria do produto
+    const {subcategorias} = await Categorias.findOne({nome: categoria})
+    
+    res.locals.subcategorias = Object.values(subcategorias)
 
 
     res.render('busca')

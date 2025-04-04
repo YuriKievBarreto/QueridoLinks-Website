@@ -73,6 +73,8 @@ async function produtosPorCategoria(req, res, next){
     }
 
     res.locals.produtosCategorizados = produtosCategorizados
+
+   
     next()
 }
 //reduz a string a X caracteres e adiciona ... no final
