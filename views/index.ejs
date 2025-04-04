@@ -177,55 +177,27 @@
             <h1 class="text-start text-2xl  font-bold  text-[#05ABED] md:text-4xl lg:text-2xl lg:mb-4">Categorias</h1>
             <h1 class="text-end text-lg mb-2 md:text-lg lg:pb-5 ver-todos"><a href="/categorias">Ver tods -></a></h1>
             <div class=" exposicao flex justify-around items-center gap-4  flex-wrap  lg:justify-start lg:gap-4">
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[3][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[3][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[3][1]%></p>
-                </div>
+               
                 
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[4][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[4][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[4][1]%></p>
-                </div>
                 
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[5][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[5][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[5][1]%></p>
-                </div>
                 
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[0][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[0][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[0][1]%></p>
-                </div>
+
+                <% categorias.forEach((cat, indice) => { %>
+                    <%console.log('estou aqui')%>
+                    <% console.log(cat.NomeDeExibicao)%>
+                    <% console.log('cat:', cat, indice) %>
+                    <% if (indice < 10) { %>
+                        <div class="item-categorias">
+                            <a href="<%=`/categorias:${cat[0]}`%>">
+                                <img src="/assets/imgs/categorias/<%= cat[0] %>.png" class="" alt="">
+                            </a>
+                            <p class="text-center text-sm font-bold"><%= cat[1] %></p>
+                        </div>
+                    <% } %>
+                <% }) %>
+
+
                 
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[1][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[1][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[1][1]%></p>
-                </div>
-                
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[2][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[2][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[2][1]%></p>
-                </div>
-                
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[6][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[6][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[6][1]%></p>
-                </div>
-                
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[7][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[7][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[7][1]%></p>
-                </div>
-                
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[8][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[8][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[8][1]%></p>
-                </div>
-                
-                <div class="item-categorias">
-                    <a href="<%=`/categorias:${categorias[9][2]}`%>"><img src="/assets/imgs/categorias/<%=categorias[9][0]%>.png" class="" alt=""></a>
-                    <p class="text-center text-sm font-bold"><%=categorias[9][1]%></p>
-                </div>
                 
                 
             </div>

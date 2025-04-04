@@ -1,8 +1,9 @@
 const Produto = require('../models/cadastroModel')
+const Categorias = require('../models/categoriasModel')
 let produtos = []
 async function middlewareGlobal (req, res, next){
     try{
-        produtos = await await Produto.aggregate([{$sample: {size: 1000}}])
+        produtos =  await Produto.aggregate([{$sample: {size: 1000}}])
         res.locals.produtos = produtos
         let produtosDinamicos = await Produto.aggregate([{$sample: {size: 10}}])
         
@@ -10,6 +11,8 @@ async function middlewareGlobal (req, res, next){
             produto.nome = cortaString(produto.nome)
             
         })
+
+        
         
         res.locals.produtosDinamicos = produtosDinamicos
         
@@ -25,24 +28,14 @@ async function middlewareGlobal (req, res, next){
     next()
 }
 
-const categorias = [
-    ["camiseta", "Moda", 'moda'],
-    ["celular", "Eletrônicos", 'eletronicos'],
-    ["brinquedo-pet", "Para pets", 'para-pets'],
-    ["acessorio", "Acessórios", 'acessorios'],
-    ["fones-de-ouvido", "Áudio", 'audio'],
-    ["corrida", "Fitness", 'fitness'],
-    ["banho", "Banho", 'banho'],
-    ["tenis-de-corrida", "Calçados", 'calcados'],
-    ["engrenagem", "Ferramentas", 'ferramentas'],
-    ["utilidades", "Utilidades", 'utilidades']
-];
+let categorias = []
+
 
 //sorteia as categorias que vão ser exibidas no inicio da pagina inicial
-function SorteiaCategoria(req, res, next) {
+async function SorteiaCategoria(req, res, next) {
     
    
-    
+    categorias = await Categorias.find({})
     const categoriasDaVez = []; 
     const indicesUsados = new Set();
 
@@ -51,9 +44,11 @@ function SorteiaCategoria(req, res, next) {
         let indice = Math.floor(Math.random() * 10);
         
         
-        if (!indicesUsados.has(indice)) {
-            categoriasDaVez.push(categorias[indice]);
+        if (!indicesUsados.has(indice)){
+            
+            categoriasDaVez.push([categorias[indice].nome, categorias[indice].NomeDeExibicao]);
             indicesUsados.add(indice); 
+            
         }
     }
 
@@ -64,39 +59,21 @@ function SorteiaCategoria(req, res, next) {
 }
 
 async function produtosPorCategoria(req, res, next){
-    qtd = categorias.length * 6
+    let qtd = categorias.length * 6
     const produtosCategorizados = []
     const categoriasParaBusca = []
-    for(let categoria of categorias){
-        let stringFormatada = categoria[1]
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        .replace('-', '')
-
-        categoriasParaBusca.push(stringFormatada)
-        res.locals.categoriasParaBusca = categoriasParaBusca
-       
+    for(let categoria of res.locals.categorias){ 
         let produtos = await Produto.aggregate([
-        { $match: { categorias: { $in: [stringFormatada] } } }, // filtra pela categoria 
+        { $match: { categorias: { $in: [categoria[0]] } } }, // filtra pela categoria 
         { $sample: { size: 6 } } // pega 6 produtos aleatórios
         ])
-
-        
-
-        
-        
 
         produtosCategorizados.push(produtos)
 
     }
 
-    
-
-      
-      res.locals.categoriasH1 = categorias.map(subArray => subArray[1])
-      res.locals.produtosCategorizados = produtosCategorizados
-      
-      next()
+    res.locals.produtosCategorizados = produtosCategorizados
+    next()
 }
 //reduz a string a X caracteres e adiciona ... no final
 function cortaString(str){

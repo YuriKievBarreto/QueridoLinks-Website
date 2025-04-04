@@ -4,7 +4,7 @@ async function Busca(req, res, next) {
    
     const {busca} = req.body
     console.log(busca)
-
+    //exibe produtos referentes a busca
     if(busca){
         console.log('entrei no if de busca')
         try {
@@ -20,7 +20,7 @@ async function Busca(req, res, next) {
         }    
     }
 
-
+    //exibe as categorias
    if(req.params && !busca){
     console.log('entrei no if de de parametros')
     let categoria = Object.values( req.params)[0].replace(':', '')
