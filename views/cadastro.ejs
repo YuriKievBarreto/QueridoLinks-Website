@@ -115,11 +115,14 @@
         <div class="mx-auto  ">
             <h1 class="text-center text-2xl  border-t-1 b-amber-300 mb-4 mt-4 ">criar categoria</h1>
             <form action="/cadastro" method="POST" class="flex flex-col">
-                <label for="nomeCat">Nome da categoria</label>
-                <input type="text" name="nomeCat" id="" class="bg-white rounded-sm b-black border-2">
-                <label for="catExib">Nome de Exibicao da categoria</label>
-                <input type="text" name="catExib" id="" class="bg-white rounded-sm b-black border-2">
+                <label for="nome">Nome da categoria</label>
+                <input type="text" name="nome" id="" class="bg-white rounded-sm b-black border-2">
+                <label for="nomeExib">Nome de Exibicao da categoria</label>
+                <input type="text" name="NomeDeExibicao" id="" class="bg-white rounded-sm b-black border-2">
+
                 <h1 class="text-2xl font-bold border-t-2 border-t-black mt-5">subcategorias</h1>
+
+
                 <label for="subCat1">Nome da subcategoria 1</label>
                 <input type="text" name="SubCat1" id="" class="bg-white rounded-sm b-black border-2">
                 <label for="subCat1">Nome de Exibicao da subcategoria 1</label>
@@ -129,14 +132,14 @@
                 <label for="subCat1" class="border-t-2 border-black mt-4">Nome da subcategoria 2</label>
                 <input type="text" name="SubCat2" id="" class="bg-white rounded-sm b-black border-2 ">
                 <label for="subCat1">Nome de Exibicao da subcategoria 2</label>
-                <input type="text" name="nomeExib3" id="" class="bg-white rounded-sm b-black border-2 b-black border-b-2  mb-4">
+                <input type="text" name="nomeExib2" id="" class="bg-white rounded-sm b-black border-2 b-black border-b-2  mb-4">
 
                 <label for="subCat1" class="border-t-2 border-black mt-4">Nome da subcategoria 3</label>
                 <input type="text" name="SubCat3" id="" class="bg-white rounded-sm b-black border-2 ">
                 <label for="subCat1">Nome de Exibicao da subcategoria 3</label>
                 <input type="text" name="nomeExib3" id="" class="bg-white rounded-sm b-black border-2 b-black border-b-2  border-b-red-400 mb-4">
                 
-                <button type="submit" class="bg-white rounded-sm b-black border-2">enviar</button>
+                <button type="submit" name="btnCat" class="bg-white rounded-sm b-black border-2">enviar</button>
             </form>
         </div>
 

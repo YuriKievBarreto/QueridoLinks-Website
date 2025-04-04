@@ -45,7 +45,11 @@ async function Busca(req, res, next) {
     console.log("--------------------------------")
     let produtosSubCat = []
     for(let subcat of subcategorias){
-        let produtosDaSubCat = await Produto.find({ categorias: {$in: [subcat.nome]}})
+        //let produtosDaSubCat = await Produto.find({ categorias: {$in: [subcat.nome]}})
+        let produtosDaSubCat = await Produto.aggregate([
+            { $match: { categorias: {$in: [subcat.nome] } } },
+            { $sample: {size: 12}}
+        ])
         produtosSubCat.push(produtosDaSubCat)
     }
 

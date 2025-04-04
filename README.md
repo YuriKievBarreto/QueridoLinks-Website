@@ -10,7 +10,7 @@ O **WebSite-Querido Links** conta com as seguintes funcionalidades:
 
 - **Página de produtos separados por categorias**: Uma página dedicada a exposição de produtos combase nas suas categorias.
 
-- - **Página de produtos relacionados a determinada categoria**: Uma página dedicada a exposição de produtos de uma determinada categoria.
+- - **Página de produtos da categoria**: Uma página dedicada a exposição de produtos de uma determinada categoria e suas respectivas subcategorias.
 
 - **Pesquisa de itens**: Realiza uma busca combase no que o usuário digitou na área de pesquisa.
 

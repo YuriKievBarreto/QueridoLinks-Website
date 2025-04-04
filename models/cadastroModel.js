@@ -7,7 +7,6 @@ const produtoSchema = new mongoose.Schema({
     imagem: String,
     loja: String,
     categorias: [String],
-    subcategorias:[String]
 })
 
 
