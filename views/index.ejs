@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
     <%- include('includes/HTMLhead') %>   
-<body class=" bg-[rgba(0,0,0,0.2)]  ">
-    <header class="   w-screen bg-blue-500 flex flex-col items-center justify-center px-1 pb-1 gap-3  z-10 md:flex-row md:h-24 md:gap-1 lg:fixed">
-
-        <div class="flex items-center gap-4 mr-4 mt-2 md:mt-0 ">
-            <img src="/assets/imgs/logo.png" class="w-10 h-10 inline-block md:w-15 md:h-15 lg:w-15 lg:h-15 lg:">
-            <h1 class="text-xl inline-block text-white font-bold md:text-4xl lg:text-4xl">QueridoLinks</h1>
-            <img src="/assets/imgs/X-logo.png" class="w-8 h-8 inline-block md:hidden">
-            <img src="/assets/imgs/whatsapp.png" class="w-7 h-7 inline-block md:hidden">
-        </div>
-
-        <form class="flex items-center gap-1  p-1 rounded-sm" method="post" action="/busca" >
-            <input type="text" name="busca" id="" placeholder="Buscar em Querido Links" class=" w-70 h-10 p-2 rounded-sm bg-white md:w-90 md:h-12 lg:w-180 lg:h-11">
-            <button class=" w-10 h-10 bg-white bg-[url(/assets/imgs/procurar.png)] bg-cover rounded-sm md:w-12 md:h-12 lg:w-11 lg:h-11"  ></button>
-        </form>        
-    </header>
-
+<body class=" bg-[rgba(0,0,0,0.2)] poppins-Regular ">
+    
+    <%- include('includes/header') %>   
 
     <main class="w-screen m-auto bg-[rgba(255,255,255,0.77)] min-h-80 pt-6 font-teste lg:pt-26" >
         <div class="flex justify-center items-center gap-10 w-95/100 bg-white shadow-xl m-auto p-3 lg:w-83/100">
 
             <div class="lg:flex flex-col justify-center items-center  pr-6 hidden sm:hidden md:hidden" > 
-                <a href=""> <img src="/assets/imgs/lojas/mercado-livre.png" class="w-10 h-10 p-1 rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
+                <a href="#"> <img src="/assets/imgs/lojas/mercado-livre.png" class="w-10 h-10 p-1 rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
                 <p>Mercado livre</p>
             </div>
 
             <div class="lg:flex flex-col justify-center items-center  pr-6 " > 
-                <a href=""> <img src="/assets/imgs/lojas/shopee.png" class="w-10 h-10 p-1 rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
+                <a href="#"> <img src="/assets/imgs/lojas/shopee.png" class="w-10 h-10 p-1 rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
                 <p>Shopee</p>
             </div>
 
             <div class="flex flex-col justify-center items-center border-r-1 pr-6" > 
-                <a href=""> <img src="/assets/imgs/promocao.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
+                <a href="/categorias"> <img src="/assets/imgs/promocao.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
                 <p>Promoções</p>
             </div>
 

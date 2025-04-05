@@ -2,10 +2,6 @@
 
 
 
-.body{
-   font-family: "Poppins", sans-serif;
-   
-}
 
 .ver-todos{
    color: #222222;
@@ -68,17 +64,6 @@
 }
 
 
-.bebasNeue{
-    font-family: 'BebasNeue-Regular';
-}
-
-
-@font-face {
-    font-family: 'BebasNeue-Regular';
-    src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
-    font-size: normal;
-    font-display: swap;
- }
 
 
  .carrossel{
