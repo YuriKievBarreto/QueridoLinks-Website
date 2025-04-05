@@ -16,7 +16,20 @@ async function middlewareGlobal (req, res, next){
         
         
         res.locals.produtosDinamicos = produtosDinamicos
-        
+
+        let produtosShopee = produtosDinamicos.filter(produto => produto.loja == "shopee")
+
+        produtosShopee = aleatorio(produtosShopee)
+        function aleatorio(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]]; 
+            }
+            return array;
+        }
+          
+        res.locals.produtosShopee = produtosShopee
+
         
         
     }catch(e){
