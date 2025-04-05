@@ -39,8 +39,8 @@
             <% categorias.forEach((cat, indice) => { %> 
                 <% if (indice == 0) { %>
                     <div class=" flex-col justify-center items-center  md:flex hover:text-blue-400"> 
-                        <a href="<%=`/categorias:${cat[0]}`%>"> <img src="/assets/imgs/categorias/<%= cat[0] %>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
-                        <p><%= cat[1] %></p>
+                        <a href="<%=`/categorias:${cat[0]}`%>" class="m-auto"> <img src="/assets/imgs/categorias/<%= cat[0] %>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                        <p class="text-center"><%= cat[1] %></p>
                     </div>
 
                 <% }else if(indice<3){ %>
