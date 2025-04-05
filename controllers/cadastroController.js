@@ -3,9 +3,12 @@ const Produto = require('../models/cadastroModel')
 const Categorias = require('../models/categoriasModel')
 
 
-
+let logado = false
 // Controlador para a página principal
  async function indexCadastro(req, res, next) {
+  if(logado == false) res.render('login')
+  logado = false
+
   const categoriasParaCadastro = await Categorias.find({})
 
   res.locals.categoriasParaCadastro = categoriasParaCadastro
@@ -15,8 +18,19 @@ const Categorias = require('../models/categoriasModel')
 
 //trata o post do form do cadastro
  async function post(req, res, next) {
+  let logado = true
   await salvarProduto(req, res);
+  
   next()
+}
+
+function loginPost(req, res, next){
+   if(req.body.senha === 'yurikiev123') {
+    logado = true
+    res.redirect('/cadastro')
+   }else{
+    res.redirect('/cadastro')
+   }
 }
 
 
@@ -95,13 +109,12 @@ class ProdutoLocal{
   }
 }
 
-async function AdicionaCategoria(req, res){
 
-}
 
 
 
 module.exports = {
   indexCadastro,
   post,
+  loginPost
 }
