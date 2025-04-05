@@ -6,7 +6,7 @@ async function middlewareGlobal (req, res, next){
     try{
         produtos =  await Produto.aggregate([{$sample: {size: 1000}}])
         res.locals.produtos = produtos
-        let produtosDinamicos = await Produto.aggregate([{$sample: {size: 10}}])
+        let produtosDinamicos = await Produto.aggregate([{$sample: {size: 30}}])
         
         produtosDinamicos.forEach(produto =>{
             produto.nome = cortaString(produto.nome)
@@ -49,7 +49,7 @@ let categorias = []
 async function SorteiaCategoria(req, res, next) {
     
    
-    categorias = await Categorias.aggregate([{$sample: {size: 10}}])
+    categorias = await Categorias.aggregate([{$sample: {size: 15}}])
     const categoriasDaVez = []; 
     const indicesUsados = new Set();
 

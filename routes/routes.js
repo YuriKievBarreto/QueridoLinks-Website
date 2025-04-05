@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {indexHome} = require('../controllers/homeController');
-const {indexCadastro, post} = require('../controllers/cadastroController');
+const {indexCadastro, post, loginPost} = require('../controllers/cadastroController');
 const {indexCategorias} = require('../controllers/categoriasController');
 const {Busca} = require('../controllers/BuscaController');
 
@@ -11,6 +11,7 @@ const Categorias = require('../models/categoriasModel')
 router.get('/',indexHome);
 router.get('/cadastro', indexCadastro)
 router.post('/cadastro', post)
+router.post('/autentica', loginPost)
 router.get('/categorias', indexCategorias)
 router.post('/busca', Busca)
 

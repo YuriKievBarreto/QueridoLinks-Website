@@ -3,16 +3,16 @@ document.addEventListener('click', e => {
     
     if (e.target.tagName === 'IMG') {
         
-        const parent = e.target.parentNode;
+        const pai = e.target.parentNode;
 
         
-        const siblings = parent.children;
+        const irmaos = pai.children;
 
       
         let span = null;
-        for (let i = 0; i < siblings.length; i++) {
-            if (siblings[i].tagName === 'SPAN') {
-                span = siblings[i];
+        for (let i = 0; i < irmaos.length; i++) {
+            if (irmaos[i].tagName === 'SPAN') {
+                span = irmaos[i];
                 break;
             }
         }
@@ -22,8 +22,6 @@ document.addEventListener('click', e => {
             const link = span.getAttribute("data-link");
             console.log(link);  
             window.open(link, "_blank");
-        } else {
-            console.log("Nenhum <span> encontrado.");
-        }
+        } 
     }
 });
