@@ -119,7 +119,7 @@
                             </div>
                         <% } %>
                         <% qtd++; 
-                            console.log(qtd)
+                           
                         %> 
 
                         
@@ -151,7 +151,6 @@
                             <div class="item-destaque hover:cursor-pointer hidden sm:hidden md:hidden lg:block">
                                 <img src="<%= produto.imagem %>" class=""  alt=""></a>
                                 <p class="text-center text-bold text-md font-bold "><%= produto.nome %></p>
-                                <% console.log('rodando') %>
                                 <span data-link="<%= produto.linkAfid %>"></span>
                             </div>  
                         <% } else { %>
@@ -188,9 +187,6 @@
                 
 
                 <% categorias.forEach((cat, indice) => { %>
-                    <%console.log('estou aqui')%>
-                    <% console.log(cat.NomeDeExibicao)%>
-                    <% console.log('cat:', cat, indice) %>
                     <% if (indice < 10) { %>
                         <div class="item-categorias">
                             <a href="<%=`/categorias:${cat[0]}`%>">

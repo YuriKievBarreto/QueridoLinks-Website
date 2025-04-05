@@ -65,8 +65,8 @@ async function produtosPorCategoria(req, res, next){
     const categoriasParaBusca = []
     for(let categoria of res.locals.categorias){ 
         let produtos = await Produto.aggregate([
-        { $match: { categorias: { $in: [categoria[0]] } } }, // filtra pela categoria 
-        { $sample: { size: 6 } } // pega 6 produtos aleatórios
+        { $match: { categorias: { $in: [categoria[0]] } } }, 
+        { $sample: { size: 6 } } 
         ])
         
         produtos.forEach(prod => {

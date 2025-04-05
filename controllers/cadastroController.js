@@ -23,11 +23,11 @@ const Categorias = require('../models/categoriasModel')
 async function salvarProduto(req, res) {
   const { nome, valor, linkAfid, imagem, loja, categorias} = req.body;
   const {NomeDeExibicao} = req.body
-  console.log(NomeDeExibicao)
+
   
   
   if(valor){
-    console.log('entrei no cadastro de produto')
+   
     try {
       // Criando o produto com os dados do formulário
       const produtoSalvo = await Produto.create({
@@ -39,7 +39,7 @@ async function salvarProduto(req, res) {
         categorias
       });
   
-      console.log('Produto salvo com sucesso:', produtoSalvo);
+      
       res.redirect('/cadastro')
     } catch (e) {
       console.log(e);
@@ -48,7 +48,7 @@ async function salvarProduto(req, res) {
   }
     
   if(NomeDeExibicao){
-    console.log('entrei no cadastro de categoria')
+   
     const {nome, NomeDeExibicao, SubCat1, SubCat2, SubCat3, nomeExib1, nomeExib2, nomeExib3 } = req.body
     const subcategorias = {
       sub1: {nome: SubCat1, NomeDeExibicao: nomeExib1},
@@ -56,7 +56,7 @@ async function salvarProduto(req, res) {
       sub3:{nome: SubCat3, NomeDeExibicao: nomeExib3}
 
      }
-     console.log('at least entrei')
+    
     try {
         // Criando o produto com os dados do formulário
         const categoriaSalva = await Categorias.create({
@@ -66,7 +66,7 @@ async function salvarProduto(req, res) {
          
       });
   
-      console.log('categoria salvo com sucesso:', categoriaSalva);
+     
       res.redirect('/cadastro')
     } catch (e) {
       console.log(e);
