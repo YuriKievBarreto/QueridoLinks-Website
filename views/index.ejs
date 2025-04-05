@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <%- include('includes/HTMLhead') %>   
 <body class=" bg-[rgba(0,0,0,0.2)]  ">
     <header class="   w-screen bg-blue-500 flex flex-col items-center justify-center px-1 pb-1 gap-3  z-10 md:flex-row md:h-24 md:gap-1 lg:fixed">
@@ -36,23 +36,28 @@
                 <p>Promoções</p>
             </div>
 
-            <div class="flex flex-col justify-center items-center"> 
-                <a href="<%=`/categorias:${categorias[0][2]}`%>"> <img src="/assets/imgs/categorias/<%=categorias[0][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14" alt="icon-lojas"></a>
-                <p><%=categorias[0][1]%></p>
-            </div>
+            <% categorias.forEach((cat, indice) => { %> 
+                <% if (indice == 0) { %>
+                    <div class=" flex-col justify-center items-center  md:flex hover:text-blue-400"> 
+                        <a href="<%=`/categorias:${cat[0]}`%>"> <img src="/assets/imgs/categorias/<%= cat[0] %>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                        <p><%= cat[1] %></p>
+                    </div>
+
+                <% }else if(indice<3){ %>
+                    
+                    <div class=" flex-col justify-center items-center hidden  md:flex hover:text-blue-400"> 
+                        <a href="<%=`/categorias:${cat[0]}`%>"> <img src="/assets/imgs/categorias/<%= cat[0] %>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
+                        <p><%= cat[1] %></p>
+                    </div>
+                    
+                    
+                <%} %>
+                
+            <% }) %>
+
 
             <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href="<%=`/categorias:${categorias[1][2]}`%>"> <img src="/assets/imgs/categorias/<%=categorias[1][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
-                <p><%=categorias[1][1]%></p>
-            </div>
-
-            <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <a href="<%=`/categorias:${categorias[2][2]}`%>"> <img src="/assets/imgs/categorias/<%=categorias[2][0]%>.png" class="w-10 h-10 p-1  rounded-lg text-amber-200 md:w-14 md:h-14 " alt="icon-lojas "></a>
-                <p><%=categorias[2][1]%></p>
-            </div>
-
-            <div class=" flex-col justify-center items-center hidden md:flex"> 
-                <p><a href="#categories">Ver Mais</a></p>
+                <p class="hover:text-blue-400 hover:text-xl ease-[0.2s]"><a href="#categories">Ver Mais</a></p>
             </div>
 
             
@@ -86,7 +91,7 @@
 
         <!--OFERTAS-->
         <div  class=" w-95/100  mx-auto mb-10 mt-10 p-3 shadow-2xl border-t-2 border-[#05ABED] lg:px-3">
-            <h1 class="text-start text-2xl mb-1 font-bold   text-[#E63946] md:text-4xl lg:text-2xl">OFERTAS</h1>
+            <h1 class="text-start text-2xl mb-1 font-bold   text-[#E63946] md:text-4xl lg:text-2xl hover:decoration-solid hover:underline"><a href="/categorias ">OFERTAS</a></h1>
             <a href="/categorias">
                 <h1 class="text-end text-lg mb-2 md:text-xl ver-todos">Ver todos -></h1>
             </a>
@@ -130,7 +135,7 @@
 
         <!--Produtos em desatque-->
         <div  class="exposicao  w-95/100  mx-auto mb-10 mt-15 p-3 shadow-2xl border-t-2 border-[#05ABED]">
-            <h1 class="text-start text-2xl mb-1 font-bold  text-[#E63946] md:text-4xl lg:text-2xl">PRODUTOS EM DESTAQUE</h1>
+            <h1 class="text-start text-2xl mb-1 font-bold  text-[#E63946] md:text-4xl lg:text-2xl hover:decoration-solid hover:underline"><a href="/categorias">PRODUTOS EM DESTAQUE</a></h1>
             <a href="/categorias">
                 <h1 class="text-end text-lg mb-2 md:text-xl ver-todos">Ver todos -></h1>
             </a>
@@ -175,7 +180,7 @@
 
         <div  class="  w-95/100  mx-auto  mt-15 p-5 shadow-2xl border-t-2 border-[#05ABED] " id="categories">
             <h1 class="text-start text-2xl  font-bold  text-[#05ABED] md:text-4xl lg:text-2xl lg:mb-4">Categorias</h1>
-            <h1 class="text-end text-lg mb-2 md:text-lg lg:pb-5 ver-todos"><a href="/categorias">Ver tods -></a></h1>
+            <h1 class="text-end text-lg mb-2 md:text-lg lg:pb-5 ver-todos"><a href="/categorias">Ver todas -></a></h1>
             <div class=" exposicao flex justify-around items-center gap-4  flex-wrap  lg:justify-start lg:gap-4">
                
                 
@@ -196,6 +201,7 @@
                     <% } %>
                 <% }) %>
 
+               
 
                 
                 

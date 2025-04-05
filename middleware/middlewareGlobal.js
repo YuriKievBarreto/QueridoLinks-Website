@@ -1,5 +1,6 @@
 const Produto = require('../models/cadastroModel')
 const Categorias = require('../models/categoriasModel')
+
 let produtos = []
 async function middlewareGlobal (req, res, next){
     try{
@@ -35,13 +36,13 @@ let categorias = []
 async function SorteiaCategoria(req, res, next) {
     
    
-    categorias = await Categorias.find({})
+    categorias = await Categorias.aggregate([{$sample: {size: 10}}])
     const categoriasDaVez = []; 
     const indicesUsados = new Set();
 
     
     while (categoriasDaVez.length < 10) {
-        let indice = Math.floor(Math.random() * 10);
+        let indice = Math.floor(Math.random() * categorias.length);
         
         
         if (!indicesUsados.has(indice)){
@@ -67,6 +68,10 @@ async function produtosPorCategoria(req, res, next){
         { $match: { categorias: { $in: [categoria[0]] } } }, // filtra pela categoria 
         { $sample: { size: 6 } } // pega 6 produtos aleatórios
         ])
+        
+        produtos.forEach(prod => {
+            prod.nome = cortaString(prod.nome)
+        })
 
         produtosCategorizados.push(produtos)
 
@@ -84,4 +89,4 @@ function cortaString(str){
 
 
 
-module.exports = {middlewareGlobal, SorteiaCategoria, produtosPorCategoria}
+module.exports = {middlewareGlobal, SorteiaCategoria, produtosPorCategoria, cortaString}

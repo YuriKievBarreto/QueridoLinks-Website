@@ -1,5 +1,6 @@
 const Produto = require('../models/cadastroModel')
 const Categorias = require('../models/categoriasModel')
+const {cortaString} = require('../middleware/middlewareGlobal')
 
 async function Busca(req, res, next) {
     let categoria = Object.values( req.params)[0].replace(':', '')
@@ -30,6 +31,10 @@ async function Busca(req, res, next) {
 
     ))
 
+    produtosDaCategoria.forEach( prod => {
+        prod.nome = cortaString(prod.nome)
+    })
+
     res.locals.produtosDaCategoria = produtosDaCategoria
     res.locals.categoria = categoria
     
@@ -40,9 +45,7 @@ async function Busca(req, res, next) {
     let {subcategorias} = await Categorias.findOne({nome: categoria})
     subcategorias = Object.values(subcategorias)
     res.locals.subcategorias = subcategorias
-    console.log("--------------------------------")
-    console.log(res.locals.subcategorias)
-    console.log("--------------------------------")
+
     let produtosSubCat = []
     for(let subcat of subcategorias){
         //let produtosDaSubCat = await Produto.find({ categorias: {$in: [subcat.nome]}})
@@ -50,6 +53,10 @@ async function Busca(req, res, next) {
             { $match: { categorias: {$in: [subcat.nome] } } },
             { $sample: {size: 12}}
         ])
+
+        produtosDaSubCat.forEach(produto => {
+           produto.nome = cortaString(produto.nome)
+        })
         produtosSubCat.push(produtosDaSubCat)
     }
 

@@ -22,7 +22,7 @@
    <main class="mt-4 flex justify-around">
     <div class="w-3/7 bg-amber-600 mx-auto rounded-xl p-4">
         <h1 class="text-center text-3xl mb-2">Cadastro produto</h1>
-        <form action="/cadastro" method="POST" class="formulario-cadastro" >
+        <form action="/cadastro" method="POST" class="formulario-cadastro" id="cadastroProd" >
             <div>
                 <label for="nome">Nome do produto</label>
                 <input maxlength="50" required type="text" name="nome" id="inpNome">
@@ -52,21 +52,21 @@
                     <% categoriasParaCadastro.forEach(cat => { %> 
                     <details >
                         <summary><label for=""><%= cat.nome %></label>
-                        <input type="checkbox" name="<%= cat.nome %>" id=""></summary>
+                        <input type="checkbox" name="categorias" value="<%= cat.nome %>" id=""></summary>
                         </summary> 
 
                         <div class="flex gap-3">
                             <div class="border-2 border-black p-1">
                                 <label for=""><%= cat.subcategorias.sub1.NomeDeExibicao %></label>
-                                <input type="checkbox" name="<%= cat.subcategorias.sub1.nome%>" id="">
+                                <input type="checkbox" name="categorias" value="<%= cat.subcategorias.sub1.nome%>" id="">
                             </div>
                             <div class="border-2 border-black p-1">
                                 <label for=""><%= cat.subcategorias.sub2.NomeDeExibicao %></label>
-                                <input type="checkbox" name="<%= cat.subcategorias.sub2.nome%>" id="">
+                                <input type="checkbox" name="categorias" value="<%= cat.subcategorias.sub2.nome%>" id="">
                             </div>
                             <div class="border-2 border-black p-1">
                                 <label for=""><%= cat.subcategorias.sub3.NomeDeExibicao %></label>
-                                <input type="checkbox" name="<%= cat.subcategorias.sub3.nome %>" id="">
+                                <input type="checkbox" name="categorias" value="<%= cat.subcategorias.sub3.nome %>" id="">
                             </div>
                         </div>
                         

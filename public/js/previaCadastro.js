@@ -1,4 +1,5 @@
 const btnPrevia = document.getElementById('previa')
+const btnForm = document.getElementById('cadastroProd')
 
 btnPrevia.addEventListener('click', e =>{
     //inputs
@@ -16,4 +17,10 @@ btnPrevia.addEventListener('click', e =>{
     previaImg.src = inpImg.value
     previaNome.innerHTML = inpNome.value
     previaValor.innerHTML = `R$:${inpValor.value}`
+})
+
+//garantir q o oform noa seja enviado masi de uma vez por produto
+btnForm.addEventListener('click', e=> {
+    btnForm.disabled = true
+    return true
 })

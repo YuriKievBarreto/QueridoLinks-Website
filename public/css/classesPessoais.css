@@ -1,5 +1,7 @@
 @import url('./tipografia.css');
 
+
+
 .body{
    font-family: "Poppins", sans-serif;
    
@@ -10,12 +12,23 @@
    font-weight: bold;
 }
 
+.ver-todos:hover{
+   color: blue;
+   text-decoration: solid;
+   text-decoration-line: underline;
+}
+
 .item-oferta{
     width: 120px;
     height:120px;
     font-family: "Poppins", sans-serif;
     border-radius: 2px;
    
+}
+
+.item-oferta>img:hover, .item-destaque>img:hover{
+   border: 3px solid rgb(255, 94, 0);
+   transition: ease-in-out 0.1s;
 }
 
 .item-oferta>img{
@@ -33,6 +46,7 @@
 
 .item-destaque{
   width: 40%;
+  overflow: hidden;
    
 }
 
@@ -111,6 +125,12 @@
    
  }
 
+ .item-categorias:hover{
+   transition: ease 0.1s;
+   border-radius: 10px;
+   color: blue; 
+ }
+ 
  .item-categorias>a{
   
   width: 100%;
