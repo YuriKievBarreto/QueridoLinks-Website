@@ -1,13 +1,17 @@
 @import url('./tipografia.css');
 
-.body{
-   font-family: "Poppins", sans-serif;
-   
-}
+
+
 
 .ver-todos{
    color: #222222;
    font-weight: bold;
+}
+
+.ver-todos:hover{
+   color: blue;
+   text-decoration: solid;
+   text-decoration-line: underline;
 }
 
 .item-oferta{
@@ -16,6 +20,11 @@
     font-family: "Poppins", sans-serif;
     border-radius: 2px;
    
+}
+
+.item-oferta>img:hover, .item-destaque>img:hover{
+   border: 3px solid rgb(255, 94, 0);
+   transition: ease-in-out 0.1s;
 }
 
 .item-oferta>img{
@@ -33,6 +42,7 @@
 
 .item-destaque{
   width: 40%;
+  overflow: hidden;
    
 }
 
@@ -54,17 +64,6 @@
 }
 
 
-.bebasNeue{
-    font-family: 'BebasNeue-Regular';
-}
-
-
-@font-face {
-    font-family: 'BebasNeue-Regular';
-    src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
-    font-size: normal;
-    font-display: swap;
- }
 
 
  .carrossel{
@@ -111,6 +110,12 @@
    
  }
 
+ .item-categorias:hover{
+   transition: ease 0.1s;
+   border-radius: 10px;
+   color: blue; 
+ }
+ 
  .item-categorias>a{
   
   width: 100%;
@@ -147,8 +152,8 @@
 
   
   .item-destaque>img{
-   max-width: 85%;
-   min-width: 80%;
+   max-width: 75%;
+   min-width: 70%;
   }
 
   .item-destaque>p{

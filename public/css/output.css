@@ -14,6 +14,7 @@
     --color-amber-900: oklch(0.414 0.112 45.904);
     --color-green-400: oklch(0.792 0.209 151.711);
     --color-blue-300: oklch(0.809 0.105 251.813);
+    --color-blue-400: oklch(0.707 0.165 254.624);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-black: #000;
     --color-white: #fff;
@@ -426,6 +427,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -651,10 +655,43 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .ease-\[0\.2s\] {
+    --tw-ease: 0.2s;
+    transition-timing-function: 0.2s;
+  }
   .hover\:cursor-pointer {
     &:hover {
       @media (hover: hover) {
         cursor: pointer;
+      }
+    }
+  }
+  .hover\:text-xl {
+    &:hover {
+      @media (hover: hover) {
+        font-size: var(--text-xl);
+        line-height: var(--tw-leading, var(--text-xl--line-height));
+      }
+    }
+  }
+  .hover\:text-blue-400 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-400);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .hover\:decoration-solid {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-style: solid;
       }
     }
   }
@@ -903,6 +940,11 @@
       padding-inline: calc(var(--spacing) * 3);
     }
   }
+  .lg\:pt-10 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 10);
+    }
+  }
   .lg\:pt-26 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 26);
@@ -1120,6 +1162,10 @@
   inherits: false;
 }
 @property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
   syntax: "*";
   inherits: false;
 }

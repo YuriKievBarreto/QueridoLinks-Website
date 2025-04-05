@@ -10,10 +10,7 @@ const categoriasSchema = new mongoose.Schema({
    } 
 })
 
-/*const categoriasSchema = new mongoose.Schema({
-   categorias:[]
-      
-})*/
+
 
 
 const Categorias = mongoose.model('Categorias', categoriasSchema);

@@ -1,11 +1,34 @@
-.bebasNeue{
-    font-family: 'BebasNeue-Regular';
-}
 
-
-@font-face {
-    font-family: 'BebasNeue-Regular';
-    src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
+ .poppins{
+    font-family: 'Poppins-Thin';
+ }
+ 
+ .poppins-Regular{
+    font-family: 'Poppins-Regular';
+ }
+ 
+ .bebasNeue{
+     font-family: 'BebasNeue-Regular';
+ }
+ 
+ 
+ @font-face {
+     font-family: 'BebasNeue-Regular';
+     src: url('/assets/fonts/BebasNeue-Regular.ttf') format('trueType');
+     font-size: normal;
+     font-display: swap;
+  }
+ 
+  @font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/assets/fonts/Poppins/Poppins-Regular.ttf') format('trueType');
+    font-size: normal;
+    font-display: swap;
+ }
+ 
+  @font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('/assets/fonts/Poppins/Poppins-SemiBold.ttf') format('trueType');
     font-size: normal;
     font-display: swap;
  }
