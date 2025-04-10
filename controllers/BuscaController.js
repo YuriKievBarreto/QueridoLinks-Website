@@ -3,9 +3,9 @@ const Categorias = require('../models/categoriasModel')
 const {cortaString} = require('../middleware/middlewareGlobal')
 
 async function Busca(req, res, next) {
-    let categoria = Object.values( req.params)[0].replace(':', '')
-    const {busca} = req.body
     
+    const {busca} = req.body
+   
     //exibe produtos referentes a busca
     if(busca){
        
@@ -22,8 +22,11 @@ async function Busca(req, res, next) {
         }    
     }
 
+   
     //exibe as categorias
    if(req.params && !busca){
+
+    let categoria = Object.values( req.params)[0].replace(':', '')
     
     const produtosCrus = res.locals.produtos
     const produtosDaCategoria = produtosCrus.filter(produto => produto.categorias.some(
@@ -39,29 +42,32 @@ async function Busca(req, res, next) {
     res.locals.categoria = categoria
     
    
+     //pega os produtos das 3 subcategorias referentes a categoria do produto
+     let {subcategorias} = await Categorias.findOne({nome: categoria})
+     subcategorias = Object.values(subcategorias)
+     res.locals.subcategorias = subcategorias
+ 
+     let produtosSubCat = []
+     for(let subcat of subcategorias){
+         let produtosDaSubCat = await Produto.aggregate([
+             { $match: { categorias: {$in: [subcat.nome] } } },
+             { $sample: {size: 12}}
+         ])
+ 
+         produtosDaSubCat.forEach(produto => {
+            produto.nome = cortaString(produto.nome)
+         })
+         produtosSubCat.push(produtosDaSubCat)
+        }
+
+         res.locals.produtosSubCat = produtosSubCat
    }
 
-    //pega os produtos das 3 subcategorias referentes a categoria do produto
-    let {subcategorias} = await Categorias.findOne({nome: categoria})
-    subcategorias = Object.values(subcategorias)
-    res.locals.subcategorias = subcategorias
-
-    let produtosSubCat = []
-    for(let subcat of subcategorias){
-        let produtosDaSubCat = await Produto.aggregate([
-            { $match: { categorias: {$in: [subcat.nome] } } },
-            { $sample: {size: 12}}
-        ])
-
-        produtosDaSubCat.forEach(produto => {
-           produto.nome = cortaString(produto.nome)
-        })
-        produtosSubCat.push(produtosDaSubCat)
-    }
+   
 
    
     
-    res.locals.produtosSubCat = produtosSubCat
+    
 
     res.render('busca')
 
