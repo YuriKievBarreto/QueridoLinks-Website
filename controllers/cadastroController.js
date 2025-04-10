@@ -6,8 +6,6 @@ const Categorias = require('../models/categoriasModel')
 let logado = false
 // Controlador para a página principal
  async function indexCadastro(req, res, next) {
-  if(logado == false) res.render('login')
-  logado = false
 
   const categoriasParaCadastro = await Categorias.find({})
 
@@ -25,12 +23,8 @@ let logado = false
 }
 
 function loginPost(req, res, next){
-   if(req.body.senha === 'yurikiev123') {
-    logado = true
     res.redirect('/cadastro')
-   }else{
-    res.redirect('/cadastro')
-   }
+   
 }
 
 
